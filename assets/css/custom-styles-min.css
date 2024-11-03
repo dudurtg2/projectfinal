@@ -1,0 +1,51 @@
+#clientesSelect {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.35rem;
+    transition: border-color 0.3s;
+}
+
+#clientesSelect:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#clientesSelect option {
+    padding: 8px;
+}
+
+#funcionarioSelect {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.35rem;
+    transition: border-color 0.3s;
+}
+
+#funcionarioSelect:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#funcionarioSelect option {
+    padding: 8px;
+}
+
+#tipoSelect {
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.35rem;
+    transition: border-color 0.3s;
+}
+
+#tipoSelect:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#tipoSelect option {
+    padding: 8px;
+}
+

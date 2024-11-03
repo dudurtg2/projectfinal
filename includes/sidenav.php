@@ -1,4 +1,4 @@
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2  bg-white my-2"
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2"
   id="sidenav-main">
   <div class="sidenav-header">
 
@@ -8,7 +8,7 @@
       >
       <img src="https://cdn-icons-png.flaticon.com/512/1/1430.png" class="navbar-brand-img" width="26" height="26"
         alt="main_logo">
-      <span class="ms-1 text-sm text-dark">Advocatos</span>
+      <span class="ms-1 text-sm nav-title">Advogados</span>
     </a>
   </div>
   <hr class="horizontal dark mt-0 mb-2">
@@ -88,7 +88,7 @@
       </li>
 
       <li class="nav-item mt-3">
-        <h6 class="ps-4 ms-2 text-uppercase text-xs text-dark font-weight-bolder opacity-5">Configuração de conta</h6>
+        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Configuração de conta</h6>
       </li>
       <li class="nav-item">
         <?php if (isset($_GET["r"])) {
@@ -121,12 +121,5 @@
         </a>
       </li>
     </ul>
-  </div>
-  <div class="sidenav-footer position-absolute w-100 bottom-0 ">
-    <div class="mx-3">
-      <a class="btn btn-outline-dark mt-4 w-100"
-        href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree"
-        type="button">Documentação</a>
-    </div>
   </div>
 </aside>

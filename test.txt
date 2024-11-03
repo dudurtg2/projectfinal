@@ -1,0 +1,36 @@
+{
+// Teceiro esse http://localhost:30514/processos/save 
+
+    "codigo": Gere um codigo que começa AD
+    "data": 
+    "hora": 
+
+    // lista de funcionarios estarar presente no codigo
+        "funcionarios": {
+            "id": passa o id
+        },
+
+    // lista de clientes estarar presente no codigo
+        "clientes": {
+            "id": passa o id
+        },
+
+//segundo o documentoProcessos retonando tb o id 
+http://localhost:30514/documentos/processos/save 
+    "documentoProcessos": {
+        "tipo": ,
+        "status": "aberto",
+        "descrisao": ,
+
+//primeiro o upload retonando o id 
+http://localhost:30514/documentos/clientes/save 
+        "documentosClientes": {
+            "linkRg": 
+            "linkResidencia": 
+            "linkEstadoCivil":
+            "linkProvas": [
+               
+            ]
+        }
+    }
+}

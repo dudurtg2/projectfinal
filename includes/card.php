@@ -22,7 +22,7 @@
   <div class="row">
     <div class="d-flex align-items-center justify-content-between ms-3">
 
-      <div>
+      <div id="title">
         <h3 class="mb-0 h4 font-weight-bolder">Advocatos</h3>
         <p class="mb-0">
           Seu sistema de gestão de processos
@@ -63,7 +63,7 @@
               <p class="text-sm mb-0 text-capitalize">Processos para hoje</p>
               <h4 class="mb-0">4 Processos</h4>
             </div>
-            <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+            <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg icon-card">
               <i class="material-symbols-rounded opacity-10">weekend</i>
             </div>
           </div>
@@ -83,7 +83,7 @@
               <p class="text-sm mb-0 text-capitalize">Total de processos</p>
               <h4 class="mb-0">2300 Processos</h4>
             </div>
-            <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+            <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">person</i>
             </div>
           </div>
@@ -103,7 +103,7 @@
               <p class="text-sm mb-0 text-capitalize">Ganhos</p>
               <h4 class="mb-0">2298 processos</h4>
             </div>
-            <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+            <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">weekend</i>
             </div>
           </div>
@@ -123,7 +123,7 @@
               <p class="text-sm mb-0 text-capitalize">Não ganho</p>
               <h4 class="mb-0">2 Processos</h4>
             </div>
-            <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
+            <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">leaderboard</i>
             </div>
           </div>

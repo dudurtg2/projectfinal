@@ -1,86 +1,84 @@
-
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
                 <div class="card-header p-2 ps-3">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <form id="myForm" class="row g-3" method="post" action="includes/_scripts/scripts.php">
-                                <div class="col-md-6">
-                                    <label for="inputNome" class="form-label">Nome</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="text" class="form-control" name="nome" id="inputNome" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputSobrenome" class="form-label">Sobrenome</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="text" class="form-control" name="sobrenome" id="inputSobrenome"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputEmail" class="form-label">Email</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="email" class="form-control" name="email" id="inputEmail" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword" class="form-label">Senha</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="password" class="form-control" name="password" id="inputPassword"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputCPF" class="form-label">CPF</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="text" class="form-control" name="cpf" id="inputCPF" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputTelefone" class="form-label">Telefone</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="text" class="form-control" name="phone" id="inputTelefone"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="professionSelect" class="form-label">Profissão</label>
-                                    <div class="input-group input-group-outline">
-                                        <select id="professionSelect" class="form-select" name="profession"
-                                            onchange="toggleOABField()">
 
-                                            <?php
-                                            $url = 'http://localhost:30514/perfis/findAll';
-                                            $response = file_get_contents($url);
-                                            if ($response !== FALSE) {
-                                                $data = json_decode($response, true);
-                                                if (is_array($data)) {
-                                                    foreach ($data as $profession) {
-                                                        echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
-                                                    }
+                    <div>
+                        <form id="myForm" class="row g-3" method="post" action="includes/_scripts/scripts.php">
+                            <div class="col-md-6">
+                                <label for="inputNome" class="form-label">Nome</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="text" class="form-control" name="nome" id="inputNome" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputSobrenome" class="form-label">Sobrenome</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="text" class="form-control" name="sobrenome" id="inputSobrenome"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="email" class="form-control" name="email" id="inputEmail" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPassword" class="form-label">Senha</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="password" class="form-control" name="password" id="inputPassword"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputCPF" class="form-label">CPF</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="text" class="form-control" name="cpf" id="inputCPF" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputTelefone" class="form-label">Telefone</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="text" class="form-control" name="phone" id="inputTelefone" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="professionSelect" class="form-label">Profissão</label>
+                                <div class="input-group input-group-outline">
+                                    <select id="professionSelect" class="form-select" name="profession"
+                                        onchange="toggleOABField()">
+
+                                        <?php
+                                        $url = 'http://localhost:30514/perfis/findAll';
+                                        $response = file_get_contents($url);
+                                        if ($response !== FALSE) {
+                                            $data = json_decode($response, true);
+                                            if (is_array($data)) {
+                                                foreach ($data as $profession) {
+                                                    echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
                                                 }
-                                            } else {
-                                                echo '<option disabled>Erro ao carregar profissões</option>';
                                             }
-                                            ?>
-                                        </select>
-                                    </div>
+                                        } else {
+                                            echo '<option disabled>Erro ao carregar profissões</option>';
+                                        }
+                                        ?>
+                                    </select>
                                 </div>
-                                <div class="col-md-6" id="oabField" style="display: none;">
-                                    <label for="inputOAB" class="form-label">OAB</label>
-                                    <div class="input-group input-group-outline">
-                                        <input type="text" class="form-control" name="oab" id="inputOAB">
-                                    </div>
+                            </div>
+                            <div class="col-md-6" id="oabField" style="display: none;">
+                                <label for="inputOAB" class="form-label">OAB</label>
+                                <div class="input-group input-group-outline">
+                                    <input type="text" class="form-control" name="oab" id="inputOAB">
                                 </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                                </div>
-                            </form>
-                        </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -88,7 +86,7 @@
     </div>
 </div>
 <?php
-// Faz a requisição à API para obter os dados dos funcionários
+
 $url = 'http://localhost:30514/funcionarios/findAll';
 $response = file_get_contents($url);
 
