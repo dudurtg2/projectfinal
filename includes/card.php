@@ -1,3 +1,32 @@
+<?php 
+$url = 'http://localhost:30514/processos/findAll';
+$response = file_get_contents($url);
+
+$aberto = 0;
+$perdido = 0;
+$vencido = 0;
+
+$processos = [];
+if ($response !== FALSE) {
+    $processos = json_decode($response, true);
+}
+if (is_array($processos)){
+    foreach ($processos as $processo){
+        if ($processo['documentoProcessos']['status'] == 'aberto') {
+            $aberto++;
+        } elseif ($processo['documentoProcessos']['status'] == 'perdido') {
+            $perdido++;
+        } elseif ($processo['documentoProcessos']['status'] == 'vencido') {
+            $vencido++;
+        }
+    }
+}
+
+$total = $aberto + $perdido + $vencido;
+
+?>
+
+
 <nav class="navbar navbar-main navbar-expand-lg px-0 mx-3 shadow-none border-radius-xl" id="navbarBlur"
   data-scroll="true">
   <div class="container-fluid py-1 px-3">
@@ -61,7 +90,7 @@
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Processos para hoje</p>
-              <h4 class="mb-0">4 Processos</h4>
+              <h4 class="mb-0"><?php echo $aberto; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg icon-card">
               <i class="material-symbols-rounded opacity-10">weekend</i>
@@ -81,7 +110,7 @@
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Total de processos</p>
-              <h4 class="mb-0">2300 Processos</h4>
+              <h4 class="mb-0"><?php echo $total; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">person</i>
@@ -101,7 +130,7 @@
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Ganhos</p>
-              <h4 class="mb-0">2298 processos</h4>
+              <h4 class="mb-0"><?php echo $vencido; ?>  processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">weekend</i>
@@ -121,7 +150,7 @@
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Não ganho</p>
-              <h4 class="mb-0">2 Processos</h4>
+              <h4 class="mb-0"><?php echo $perdido; ?>  Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">leaderboard</i>

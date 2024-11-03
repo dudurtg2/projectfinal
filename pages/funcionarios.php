@@ -5,7 +5,7 @@
                 <div class="card-header p-2 ps-3">
 
                     <div>
-                        <form id="myForm" class="row g-3" method="post" action="includes/_scripts/scripts.php">
+                        <form id="myForm" class="row g-3" method="post" action="includes/_scripts/repository/funcionario.php">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome</label>
                                 <div class="input-group input-group-outline">
