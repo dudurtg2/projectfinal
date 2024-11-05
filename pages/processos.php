@@ -46,7 +46,7 @@
                                     <select id="funcionarioSelect" class="form-select" name="funcionario" required>
                                     <option value="" disabled selected>Selecione o funcionario</option>
                                         <?php
-                                        $url = 'http://localhost:30514/funcionarios/findAll';
+                                        $url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
                                         $response = file_get_contents($url);
                                         if ($response !== FALSE) {
                                             $data = json_decode($response, true);
@@ -68,7 +68,7 @@
                                     <select id="clientesSelect" class="form-select" name="clientes" required>
                                         <option value="" disabled selected>Selecione o clientes</option>
                                         <?php
-                                        $url = 'http://localhost:30514/clientes/findAll';
+                                        $url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
                                         $response = file_get_contents($url);
                                         if ($response !== FALSE) {
                                             $data = json_decode($response, true);

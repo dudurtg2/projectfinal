@@ -1,5 +1,5 @@
-<?php 
-$url = 'http://localhost:30514/processos/findAll';
+<?php
+$url = 'http://carlo4664.c44.integrator.host:10504/processos/findAll';
 $response = file_get_contents($url);
 
 $funcionarios = [];
@@ -12,7 +12,12 @@ if ($response !== FALSE) {
         <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
                 <div class="card-header p-2 ps-3">
-                    <h5>Lista de Cadastrados de Processos</h5>
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Lista de Cadastrados de Processos</h6>
+                        </div>
+                    </div>
+
                     <table id="example" class="display">
                         <thead>
                             <tr>

@@ -5,7 +5,8 @@
                 <div class="card-header p-2 ps-3">
 
                     <div>
-                        <form id="myForm" class="row g-3" method="post" action="includes/_scripts/repository/funcionario.php">
+                        <form id="myForm" class="row g-3" method="post"
+                            action="includes/_scripts/repository/funcionario.php">
                             <div class="col-md-6">
                                 <label for="inputNome" class="form-label">Nome</label>
                                 <div class="input-group input-group-outline">
@@ -49,11 +50,12 @@
                                 <div class="input-group input-group-outline">
                                     <select id="professionSelect" class="form-select" name="profession"
                                         onchange="toggleOABField()">
-
+                                        <option value="" disabled selected>Selecione a profissão</option>
                                         <?php
-                                        $url = 'http://localhost:30514/perfis/findAll';
+                                        $url = 'http://carlo4664.c44.integrator.host:10504/perfis/findAll';
                                         $response = file_get_contents($url);
                                         if ($response !== FALSE) {
+
                                             $data = json_decode($response, true);
                                             if (is_array($data)) {
                                                 foreach ($data as $profession) {
@@ -87,7 +89,7 @@
 </div>
 <?php
 
-$url = 'http://localhost:30514/funcionarios/findAll';
+$url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
 $response = file_get_contents($url);
 
 $funcionarios = [];
@@ -100,7 +102,12 @@ if ($response !== FALSE) {
         <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
             <div class="card">
                 <div class="card-header p-2 ps-3">
-                    <h5>Funcionários Cadastrados</h5>
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Funcionários Cadastrados</h6>
+                        </div>
+                    </div>
+                    
                     <table id="example" class="display">
                         <thead>
                             <tr>

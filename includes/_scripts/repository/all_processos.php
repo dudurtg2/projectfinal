@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$url = 'http://localhost:30514/processos/findAll';
+$url = 'http://carlo4664.c44.integrator.host:10504/processos/findAll';
 
 $response = @file_get_contents($url);
 

@@ -1,24 +1,25 @@
 <?php
-// Verifica se o parâmetro 'codigo' está presente na URL
+
 if (isset($_GET['codigo'])) {
     $codigo = $_GET['codigo'];
 
-    // URL da API para buscar o processo pelo código
-    $url = "http://localhost:30514/processos/findByCodigo/" . urlencode($codigo);
+    $url = "http://carlo4664.c44.integrator.host:10504/processos/findByCodigo/" . urlencode($codigo);
     $response = file_get_contents($url);
 
-    // Decodifica a resposta JSON da API
     $processo = [];
     if ($response !== FALSE) {
         $processo = json_decode($response, true);
         ?>
         <div class="container py-4">
-            <h2 class="mb-4">Detalhes do Processo</h2>
 
-            <!-- Informações do Processo -->
             <div class="card mb-3">
                 <div class="card-header">
-                    <h5>Processo</h5>
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Detalhes do Processo</h6>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="card-body">
                     <p><strong>Código:</strong> <?php echo htmlspecialchars($processo['codigo']); ?></p>
@@ -31,10 +32,15 @@ if (isset($_GET['codigo'])) {
                 </div>
             </div>
 
-            <!-- Informações do Funcionário -->
+
             <div class="card mb-3">
                 <div class="card-header">
-                    <h5>Funcionário Responsável</h5>
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Funcionário Responsável</h6>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="card-body">
                     <p><strong>Nome:</strong> <?php echo htmlspecialchars($processo['funcionarios']['nome']); ?></p>
@@ -45,10 +51,14 @@ if (isset($_GET['codigo'])) {
                 </div>
             </div>
 
-            <!-- Informações do Cliente -->
+
             <div class="card mb-3">
                 <div class="card-header">
-                    <h5>Cliente</h5>
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Cliente</h6>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-body">
                     <p><strong>Nome:</strong> <?php echo htmlspecialchars($processo['clientes']['nome']); ?></p>
@@ -68,10 +78,15 @@ if (isset($_GET['codigo'])) {
                 </div>
             </div>
 
-            <!-- Documentos do Cliente -->
+
             <div class="card mb-3">
                 <div class="card-header">
-                    <h5>Documentos do Cliente</h5>
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3">Documentos do Cliente</h6>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="card-body">
                     <p><strong>RG:</strong></p>

@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "linkProvas" => $linkProvas
     ];
 
-    $documentosClientesResponse = file_get_contents("http://localhost:30514/documentos/clientes/save", false, stream_context_create([
+    $documentosClientesResponse = file_get_contents("http://carlo4664.c44.integrator.host:10504/documentos/clientes/save", false, stream_context_create([
         "http" => [
             "method" => "POST",
             "header" => "Content-Type: application/json\r\n",
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "documentosClientes" => ["id" => $documentosClientesId]
     ];
 
-    $documentoProcessosResponse = file_get_contents("http://localhost:30514/documentos/processos/save", false, stream_context_create([
+    $documentoProcessosResponse = file_get_contents("http://carlo4664.c44.integrator.host:10504/documentos/processos/save", false, stream_context_create([
         "http" => [
             "method" => "POST",
             "header" => "Content-Type: application/json\r\n",
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         "documentoProcessos" => ["id" => $documentoProcessosId]
     ];
 
-    $processoResponse = file_get_contents("http://localhost:30514/processos/save", false, stream_context_create([
+    $processoResponse = file_get_contents("http://carlo4664.c44.integrator.host:10504/processos/save", false, stream_context_create([
         "http" => [
             "method" => "POST",
             "header" => "Content-Type: application/json\r\n",

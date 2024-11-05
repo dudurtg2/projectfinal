@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     $jsonData = json_encode($data);
-    $url = 'http://localhost:30514/funcionarios/save';
+    $url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/save';
     $ch = curl_init($url);
 
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
