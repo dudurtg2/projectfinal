@@ -84,7 +84,7 @@ $total = $aberto + $perdido + $vencido;
 
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4 card-background">
       <div class="card">
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
@@ -104,7 +104,7 @@ $total = $aberto + $perdido + $vencido;
         </div>
       </div>
     </div>
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4 card-background">
       <div class="card">
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
@@ -124,7 +124,7 @@ $total = $aberto + $perdido + $vencido;
       </div>
     </div>
 
-    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4 card-background">
       <div class="card">
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
@@ -144,7 +144,7 @@ $total = $aberto + $perdido + $vencido;
       </div>
     </div>
 
-    <div class="col-xl-3 col-sm-6 ">
+    <div class="col-xl-3 col-sm-6">
       <div class="card">
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
