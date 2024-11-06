@@ -8,6 +8,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  9*/
 
+ .caixa{
+  background-color: #E2E2F3;
+
+}
+ .calendar-color{
+  background-color: white;
+ }
+
 .tag-tittle{
   background-color: #18183A;
   margin-top: 20px;
@@ -5495,9 +5503,10 @@ fieldset:disabled .btn {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #fff;
+  --bs-card-bg: ;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
+  background-color: white;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -5574,7 +5583,7 @@ fieldset:disabled .btn {
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color);
+  color: black;
 }
 
 .card-title {
@@ -28592,7 +28601,7 @@ span.flatpickr-weekday {
   margin-top: 15px !important;
 }
 
-.flatpickr-calendar .numInputWrapper span {
+.flatpickr-.numInputWrapper span {
   border: none;
   border-bottom: 1px solid rgba(57, 57, 57, 0.15);
 }
@@ -28600,6 +28609,7 @@ span.flatpickr-weekday {
 .flatpickr-calendar .numInputWrapper:hover .arrowUp,
 .flatpickr-calendar .numInputWrapper:hover .arrowDown {
   margin-top: 3px;
+
 }
 
 .flatpickr-calendar .flatpickr-day.today,
