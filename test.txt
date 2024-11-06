@@ -1,5 +1,5 @@
 {
-// Teceiro esse http://localhost:30514/processos/save 
+// Teceiro esse http://carlo4664.c44.integrator.host:10504/processos/save 
 
     "codigo": Gere um codigo que começa AD
     "data": 
@@ -16,14 +16,14 @@
         },
 
 //segundo o documentoProcessos retonando tb o id 
-http://localhost:30514/documentos/clientes/save 
+http://carlo4664.c44.integrator.host:10504/documentos/clientes/save 
     "documentoProcessos": {
         "tipo": ,
         "status": "aberto",
         "descrisao": ,
 
 //primeiro o upload retonando o id 
-http://localhost:30514/documentos/clientes/save 
+http://carlo4664.c44.integrator.host:10504/documentos/clientes/save 
         "documentosClientes": {
             "linkRg": 
             "linkResidencia": 
