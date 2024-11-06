@@ -1,4 +1,4 @@
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2"
+<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2 color-primary"
   id="sidenav-main">
   <div class="sidenav-header">
 
@@ -6,7 +6,7 @@
       aria-hidden="true" id="iconSidenav"></i>
     <a class="navbar-brand px-4 py-3 m-0" href="dashboard.php"
       >
-      <img src="https://cdn-icons-png.flaticon.com/512/1/1430.png" class="navbar-brand-img" width="26" height="26"
+      <img src="https://static.vecteezy.com/system/resources/previews/019/005/521/original/scale-of-justice-icon-png.png" class="navbar-brand-img" width="26" height="26"
         alt="main_logo">
       <span class="ms-1 text-sm nav-title">Advogados</span>
     </a>
@@ -25,7 +25,7 @@
           echo '<a class="nav-link text-dark" href="dashboard.php?r=processos">';
         } ?>
 
-        <i class="material-symbols-rounded opacity-5">dashboard</i>
+        <i class="material-symbols-rounded icon-navbar">dashboard</i>
         <span class="nav-link-text ms-1">Processos</span>
         </a>
       </li>
@@ -40,7 +40,7 @@
           echo '<a class="nav-link text-dark" href="dashboard.php?r=clientes">';
         } ?>
 
-        <i class="material-symbols-rounded opacity-5">table_view</i>
+        <i class="material-symbols-rounded icon-navbar">table_view</i>
         <span class="nav-link-text ms-1">Clientes</span>
         </a>
       </li>
@@ -54,7 +54,7 @@
         } else {
           echo '<a class="nav-link text-dark" href="dashboard.php?r=funcionarios">';
         } ?>
-        <i class="material-symbols-rounded opacity-5">receipt_long</i>
+        <i class="material-symbols-rounded icon-navbar">receipt_long</i>
         <span class="nav-link-text ms-1">Funcionarios</span>
         </a>
       </li>
@@ -68,7 +68,7 @@
         } else {
           echo '<a class="nav-link text-dark" href="dashboard.php?r=tarefas">';
         } ?>
-        <i class="material-symbols-rounded opacity-5">view_in_ar</i>
+        <i class="material-symbols-rounded icon-navbar">view_in_ar</i>
         <span class="nav-link-text ms-1">Tarefas</span>
         </a>
       </li>
@@ -82,7 +82,7 @@
         } else {
           echo '<a class="nav-link text-dark" href="dashboard.php?r=acompanhamento">';
         } ?>
-        <i class="material-symbols-rounded opacity-5">format_textdirection_r_to_l</i>
+        <i class="material-symbols-rounded icon-navbar">format_textdirection_r_to_l</i>
         <span class="nav-link-text ms-1">Acompanhamento</span>
         </a>
       </li>
@@ -100,7 +100,7 @@
         } else {
           echo '<a class="nav-link text-dark" href="dashboard.php?r=perfil">';
         } ?>
-        <i class="material-symbols-rounded opacity-5">person</i>
+        <i class="material-symbols-rounded icon-navbar">person</i>
         <span class="nav-link-text ms-1">Perfil</span>
         </a>
       </li>
@@ -116,8 +116,8 @@
           echo '<a class="nav-link text-dark" href="dashboard.php?r=resgistrar">';
         } ?>
 
-        <i class="material-symbols-rounded opacity-5">assignment</i>
-        <span class="nav-link-text ms-1">Resgistrar</span>
+        <i class="material-symbols-rounded icon-navbar">assignment</i>
+        <span class="nav-link-text ms-1">Registrar</span>
         </a>
       </li>
     </ul>

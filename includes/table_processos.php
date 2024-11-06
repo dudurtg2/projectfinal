@@ -10,10 +10,10 @@ if ($response !== FALSE) {
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
-            <div class="card">
+            <div class="card-2">
                 <div class="card-header p-2 ps-3">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                        <div class="tag-tittle shadow-dark border-radius-lg pt-4 pb-3">
                             <h6 class="text-white text-capitalize ps-3">Lista de Cadastrados de Processos</h6>
                         </div>
                     </div>

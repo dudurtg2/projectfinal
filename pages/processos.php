@@ -1,7 +1,7 @@
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
-            <div class="card">
+            <div class="card-2">
                 <div class="card-header p-2 ps-3">
                     <h5>Novo Processo</h5>
                     <div>
@@ -41,10 +41,10 @@
 
 
                             <div class="col-md-6">
-                                <label for="funcionarioSelect" class="form-label">Funcionario</label>
+                                <label for="funcionarioSelect" class="form-label">Funcionário</label>
                                 <div class="input-group input-group-outline">
                                     <select id="funcionarioSelect" class="form-select" name="funcionario" required>
-                                    <option value="" disabled selected>Selecione o funcionario</option>
+                                    <option value="" disabled selected>Selecione o funcionário</option>
                                         <?php
                                         $url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
                                         $response = file_get_contents($url);
@@ -88,7 +88,7 @@
                             <div class="container-fluid py-2">
                                 <div class="row">
                                     <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
-                                        <div class="card">
+                                        <div class="card-2">
                                             <div class="card-header p-2 ps-3">
                                                 <div class="form-group col-md-6">
                                                     <label for="linkRg" class="form-label">RG:</label>
