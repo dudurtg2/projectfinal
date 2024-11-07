@@ -1,29 +1,5 @@
-<?php 
-$url = 'http://carlo4664.c44.integrator.host:10504/processos/findAll';
-$response = file_get_contents($url);
-
-$aberto = 0;
-$perdido = 0;
-$vencido = 0;
-
-$processos = [];
-if ($response !== FALSE) {
-    $processos = json_decode($response, true);
-}
-if (is_array($processos)){
-    foreach ($processos as $processo){
-        if ($processo['documentoProcessos']['status'] == 'aberto') {
-            $aberto++;
-        } elseif ($processo['documentoProcessos']['status'] == 'perdido') {
-            $perdido++;
-        } elseif ($processo['documentoProcessos']['status'] == 'vencido') {
-            $vencido++;
-        }
-    }
-}
-
-$total = $aberto + $perdido + $vencido;
-
+<?php
+include("includes/_scripts/repository/findprocessos.php");
 ?>
 
 
@@ -76,10 +52,13 @@ $total = $aberto + $perdido + $vencido;
           <span class="me-2">
             <i class="fas fa-search"></i>
           </span>
-          <div class="input-group input-group-outline w-100">
-            <label class="form-label">Pesquise por clientes...</label>
-            <input type="text" class="form-control">
-          </div>
+          <form action="dashboard.php?r=tarefas" method="POST">
+            <div class="input-group input-group-outline w-100">
+              <label class="form-label">Pesquise por clientes ou código...</label>
+              <input type="text" class="form-control" name="busca" required>
+            </div>
+          </form>
+
         </div>
 
       </div>
@@ -100,7 +79,8 @@ $total = $aberto + $perdido + $vencido;
         <hr class="dark horizontal my-0">
         <div class="card-footer p-2 ps-3">
           <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">♛ </span> Dia
-            <?php echo date('d/m/Y'); ?></p>
+            <?php echo date('d/m/Y'); ?>
+          </p>
         </div>
       </div>
     </div>
@@ -130,7 +110,7 @@ $total = $aberto + $perdido + $vencido;
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Ganhos</p>
-              <h4 class="mb-0"><?php echo $vencido; ?>  processos</h4>
+              <h4 class="mb-0"><?php echo $vencido; ?> processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">weekend</i>
@@ -150,7 +130,7 @@ $total = $aberto + $perdido + $vencido;
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Não ganho</p>
-              <h4 class="mb-0"><?php echo $perdido; ?>  Processos</h4>
+              <h4 class="mb-0"><?php echo $perdido; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">leaderboard</i>
@@ -169,4 +149,40 @@ $total = $aberto + $perdido + $vencido;
 </div>
 
 
-  
+<?php if ($processosEncontrados !== null): ?>
+  <h3>Resultados encontrados:</h3>
+  <?php if (!empty($processosEncontrados)): ?>
+    <div class="list-group">
+      <?php
+      // Se for um único processo (por código), exibe as informações
+      if (isset($processosEncontrados['codigo'])) {
+        echo "<a href='dashboard.php?r=acompanhamento&codigo=" . urlencode($processosEncontrados['codigo']) . "' class='list-group-item list-group-item-action'>";
+        echo "<div class='process-box'>";
+        echo "<h5>Código: " . htmlspecialchars($processosEncontrados['codigo']) . "</h5>";
+        echo "<h5>Data: " . htmlspecialchars($processosEncontrados['data']) . "</h5>";
+        echo "<p><strong>Cliente:</strong> " . htmlspecialchars($processosEncontrados['clientes']['nome']) . "</p>";
+        echo "<p><strong>Funcionario:</strong> " . htmlspecialchars($processosEncontrados['funcionarios']['nome']) . "</p>";
+        echo "<p><strong>Status:</strong> " . htmlspecialchars($processosEncontrados['documentoProcessos']['status']) . "</p>";
+        echo "<p><strong>Descrição:</strong> " . htmlspecialchars($processosEncontrados['documentoProcessos']['descrisao']) . "</p>";
+        echo "</div>";
+        echo "</a>";
+      } else {
+        foreach ($processosEncontrados as $processo) {
+          echo "<a href='dashboard.php?r=acompanhamento&codigo=" . urlencode($processo['codigo']) . "' class='list-group-item list-group-item-action'>";
+          echo "<div class='process-box'>";
+          echo "<h5>Código: " . htmlspecialchars($processo['codigo']) . "</h5>";
+          echo "<h5>Data: " . htmlspecialchars($processo['data']) . "</h5>";
+          echo "<p><strong>Cliente:</strong> " . htmlspecialchars($processo['clientes']['nome']) . "</p>";
+          echo "<p><strong>Funcionario:</strong> " . htmlspecialchars($processo['funcionarios']['nome']) . "</p>";
+          echo "<p><strong>Status:</strong> " . htmlspecialchars($processo['documentoProcessos']['status']) . "</p>";
+          echo "<p><strong>Descrição:</strong> " . htmlspecialchars($processo['documentoProcessos']['descrisao']) . "</p>";
+          echo "</div>";
+          echo "</a>";
+        }
+      }
+      ?>
+    </div>
+  <?php else: ?>
+    <p>Nenhum processo encontrado.</p>
+  <?php endif; ?>
+<?php endif; ?>

@@ -1,5 +1,6 @@
-<aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2 color-primary"
-  id="sidenav-main">
+
+  <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-radius-lg fixed-start ms-2 my-2 color-primary" id="sidenav-main">
+
   <div class="sidenav-header">
 
     <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
@@ -12,7 +13,7 @@
     </a>
   </div>
   <hr class="horizontal dark mt-0 mb-2">
-  <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
         <?php if (isset($_GET["r"])) {
