@@ -1,3 +1,3 @@
 <script>
-    window.location.href = "dashboard.php";
+    window.location.href = "login.php";
 </script>
