@@ -143,7 +143,7 @@
                 <div class="card-header pb-0 p-3">
                   <h6 class="mb-0">Conversations</h6>
                 </div>
-                <div class="card-body p-3">
+                <div class="contacts p-3">
                   <ul class="list-group">
                     <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2 pt-0">
                       <div class="avatar me-3">
