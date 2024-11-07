@@ -88,8 +88,8 @@
                             <div class="container-fluid py-2">
                                 <div class="row">
                                     <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
-                                        <div class="card-2">
-                                            <div class="card-header p-2 ps-3">
+                                        <div class="card-3">
+                                            <div class="p-2 ps-3">
                                                 <div class="form-group col-md-6">
                                                     <label for="linkRg" class="form-label">RG:</label>
                                                     <input type="file" class="form-control-file" id="linkRg"

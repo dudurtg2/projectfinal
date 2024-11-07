@@ -8,6 +8,29 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  9*/
 
+.card-3{
+  color: black;
+  background-color: #0000000a;
+  border-radius: 20px;
+}
+
+.card-3 label{
+  color: #000;
+}
+
+.card-3 input{
+  margin-left: 5px;
+  margin: 5px;
+}
+
+ .caixa{
+  background-color: #E2E2F3;
+
+}
+ .calendar-color{
+  background-color: white;
+ }
+
 .tag-tittle{
   background-color: #18183A;
   margin-top: 20px;
@@ -3932,19 +3955,19 @@ fieldset:disabled .btn {
 
 .btn-primary {
   --bs-btn-color: #0a0a0a;
-  --bs-btn-bg: #e91e63;
-  --bs-btn-border-color: #e91e63;
+  --bs-btn-bg: #18183A;
+  --bs-btn-border-color: #18183A;
   --bs-btn-hover-color: #0a0a0a;
-  --bs-btn-hover-bg: rgb(236.3, 63.75, 122.4);
-  --bs-btn-hover-border-color: rgb(235.2, 52.5, 114.6);
+  --bs-btn-hover-bg: #18183a61;
+  --bs-btn-hover-border-color: #18183a00;
   --bs-btn-focus-shadow-rgb: 200, 27, 86;
   --bs-btn-active-color: #0a0a0a;
-  --bs-btn-active-bg: rgb(237.4, 75, 130.2);
-  --bs-btn-active-border-color: rgb(235.2, 52.5, 114.6);
+  --bs-btn-active-bg: #18183A;
+  --bs-btn-active-border-color: #18183A;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #0a0a0a;
-  --bs-btn-disabled-bg: #e91e63;
-  --bs-btn-disabled-border-color: #e91e63;
+  --bs-btn-disabled-bg: #18183A;
+  --bs-btn-disabled-border-color: #18183A;
 }
 
 .btn-secondary {
@@ -5495,9 +5518,10 @@ fieldset:disabled .btn {
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
-  --bs-card-bg: #fff;
+  --bs-card-bg: ;
   --bs-card-img-overlay-padding: 1rem;
   --bs-card-group-margin: 0.75rem;
+  background-color: white;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -5574,7 +5598,7 @@ fieldset:disabled .btn {
 .card-body {
   flex: 1 1 auto;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
-  color: var(--bs-card-color);
+  color: black;
 }
 
 .card-title {
@@ -7647,7 +7671,7 @@ fieldset:disabled .btn {
   --bs-spinner-border-width: 0.25em;
   --bs-spinner-animation-speed: 0.75s;
   --bs-spinner-animation-name: spinner-border;
-  border: var(--bs-spinner-border-width) solid currentcolor;
+  border: var(--bs-spinner-border-width) solid #18183A;
   border-right-color: transparent;
 }
 
@@ -21990,19 +22014,19 @@ fieldset:disabled .btn {
 
 .btn-primary,
 .btn.bg-gradient-primary {
-  box-shadow: 0 2px 2px 0 rgba(233, 30, 99, 0.1), 0 3px 1px -2px rgba(233, 30, 99, 0.18), 0 1px 5px 0 rgba(233, 30, 99, 0.15);
+  box-shadow: 0 2px 2px 0 #18183A;
 }
 
 .btn-primary:hover,
 .btn.bg-gradient-primary:hover {
-  background-color: #e91e63;
-  border-color: #e91e63;
-  box-shadow: 0 8px 14px -8px rgba(233, 30, 99, 0.3), 0 3px 18px 0 rgba(233, 30, 99, 0.1), 0 7px 8px -4px rgba(233, 30, 99, 0.18);
+  background-color: #18184f;
+  border-color: ;
+  box-shadow: 0 8px 14px -8px #18183A;
 }
 
 .btn-primary .btn.bg-outline-primary,
 .btn.bg-gradient-primary .btn.bg-outline-primary {
-  border: 1px solid #e91e63;
+  border: 1px solid #18183A;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -22011,8 +22035,8 @@ fieldset:disabled .btn {
 .btn.bg-gradient-primary:not(:disabled):not(.disabled).active,
 .btn.bg-gradient-primary:not(:disabled):not(.disabled):active,
 .show>.btn.bg-gradient-primary.dropdown-toggle {
-  color: color-yiq(#e91e63);
-  background-color: #e91e63;
+  color: color-yiq(#18183A);
+  background-color: #18183A;
 }
 
 .btn-primary.focus,
@@ -28592,7 +28616,7 @@ span.flatpickr-weekday {
   margin-top: 15px !important;
 }
 
-.flatpickr-calendar .numInputWrapper span {
+.flatpickr-.numInputWrapper span {
   border: none;
   border-bottom: 1px solid rgba(57, 57, 57, 0.15);
 }
@@ -28600,6 +28624,7 @@ span.flatpickr-weekday {
 .flatpickr-calendar .numInputWrapper:hover .arrowUp,
 .flatpickr-calendar .numInputWrapper:hover .arrowDown {
   margin-top: 3px;
+
 }
 
 .flatpickr-calendar .flatpickr-day.today,
