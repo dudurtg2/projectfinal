@@ -1,15 +1,18 @@
 <?php
-$url = 'http://carlo4664.c44.integrator.host:10504/processos/findAll';
+$url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
 $response = file_get_contents($url);
 
 $funcionarios = [];
 if ($response !== FALSE) {
     $funcionarios = json_decode($response, true);
 }
+
 ?>
+
+
 <div class="container-fluid py-2">
     <div class="row">
-        <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
+        <div class="col-xl-12">
             <div class="card-2">
                 <div class="card-header p-2 ps-3">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
@@ -21,11 +24,10 @@ if ($response !== FALSE) {
                     <table id="example" class="display">
                         <thead>
                             <tr>
-                                <th>Codigo de processo</th>
-                                <th>Funcionario</th>
-                                <th>Clientes</th>
-                                <th>Data</th>
-                                <th>Hora</th>
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>CPF</th>
+                                <th>email</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,14 +36,13 @@ if ($response !== FALSE) {
                                     <tr>
                                         <td>
                                             <a
-                                                href="dashboard.php?r=acompanhamento&codigo=<?php echo urlencode($funcionario['codigo']); ?>">
-                                                <?php echo htmlspecialchars($funcionario['codigo']); ?>
+                                                href="dashboard.php?r=tarefas" method="POST"> 
+                                                <?php echo htmlspecialchars($funcionario['nome']); ?>
                                             </a>
                                         </td>
-                                        <td><?php echo htmlspecialchars($funcionario['funcionarios']['nome']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['clientes']['nome']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['data']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['hora']); ?></td>
+                                        <td><?php echo htmlspecialchars($funcionario['telefoneCelular']); ?></td>
+                                        <td><?php echo htmlspecialchars($funcionario['cpf']); ?></td>
+                                        <td><?php echo htmlspecialchars($funcionario['email']); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
@@ -56,3 +57,6 @@ if ($response !== FALSE) {
         </div>
     </div>
 </div>
+<?php
+include("includes/_scripts/processosEncontrados.php");
+?>
