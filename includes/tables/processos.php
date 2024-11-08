@@ -25,7 +25,7 @@ if ($response !== FALSE) {
                                 <th>Funcionario</th>
                                 <th>Clientes</th>
                                 <th>Data</th>
-                                <th>Hora</th>
+                                <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -41,7 +41,7 @@ if ($response !== FALSE) {
                                         <td><?php echo htmlspecialchars($funcionario['funcionarios']['nome']); ?></td>
                                         <td><?php echo htmlspecialchars($funcionario['clientes']['nome']); ?></td>
                                         <td><?php echo htmlspecialchars($funcionario['data']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['hora']); ?></td>
+                                        <td><?php echo htmlspecialchars($funcionario['documentoProcessos']['status']); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>

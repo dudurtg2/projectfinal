@@ -8,7 +8,7 @@ include "includes/tables/clientes.php";
       <div class="card-2">
         <div class="card-header p-2 ps-3">
           <div>
-            <form id="myForm" class="row g-3" method="post" action="includes/_scripts/repository/funcionario.php">
+            <form id="myForm" class="row g-3" method="post" action="includes/_scripts/repository/clientes.php">
               <div class="col-md-6">
                 <label for="inputNome" class="form-label">Nome</label>
                 <div class="input-group input-group-outline">
@@ -22,34 +22,102 @@ include "includes/tables/clientes.php";
                 </div>
               </div>
               <div class="col-md-6">
+                <label for="inputSobrenome" class="form-label">Nascionalidade</label>
+                <div class="input-group input-group-outline">
+                  <input type="text" class="form-control" name="nascionalidade" id="inputSobrenome" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="inputSobrenome" class="form-label">Profissão</label>
+                <div class="input-group input-group-outline">
+                  <input type="text" class="form-control" name="profissao" id="inputSobrenome" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="inputCPF" class="form-label">CPF</label>
+                <div class="input-group input-group-outline">
+                  <input type="text" class="form-control" name="cpf" id="inputCPF" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="inputData" class="form-label">Data de Nascimento</label>
+                <div class="input-group input-group-outline">
+                  <input type="date" class="form-control" name="data_nascimento" id="inputData" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="civilSelect" class="form-label">Estado Civil</label>
+                <div class="input-group input-group-outline">
+                  <select id="civilSelect" class="form-select" name="estado_civil" onchange="toggleOABField()">
+                    <option value="" disabled selected>Selecione seu Estado Civil</option>
+                    <option value="Solteiro">Solteiro</option>
+                    <option value="Casado">Casado</option>
+                    <option value="Viuvo">Viuvo</option>
+                    <option value="Divorciado">Divorciado</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="inputSobrenome" class="form-label">Endereço</label>
+                <div class="input-group input-group-outline">
+                  <input type="text" class="form-control" name="endereco" id="inputSobrenome" required>
+                </div>
+              </div>
+
+              <div class="col-md-12">
                 <label for="inputEmail" class="form-label">Email</label>
                 <div class="input-group input-group-outline">
                   <input type="email" class="form-control" name="email" id="inputEmail" required>
                 </div>
               </div>
               <div class="col-md-6">
-                <label for="inputPassword" class="form-label">Senha</label>
-                <div class="input-group input-group-outline">
-                  <input type="password" class="form-control" name="password" id="inputPassword" required>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <label for="inputCPF" class="form-label">CPF</label>
-                <div class="input-group input-group-outline">
-                  <input type="text" class="form-control" name="cpf" id="inputCPF" required>
-                </div>
-              </div>
-              <div class="col-md-6">
                 <label for="inputTelefone" class="form-label">Telefone</label>
                 <div class="input-group input-group-outline">
-                  <input type="text" class="form-control" name="phone" id="inputTelefone" required>
+                  <input type="text" class="form-control" name="telefone_celular" id="inputTelefone" required>
                 </div>
               </div>
+              <div class="col-md-6">
+                <label for="inputTelefone" class="form-label">Telefone Fixo</label>
+                <div class="input-group input-group-outline">
+                  <input type="text" class="form-control" name="telefone_fixo" id="inputTelefone">
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+              </div>
+            </form>
+
           </div>
-        </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-<?php
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  document.getElementById('myForm').onsubmit = async function (event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+
+    const response = await fetch(this.action, {
+      method: 'POST',
+      body: formData
+    });
+
+    const result = await response.json();
+
+    Swal.fire({
+      icon: result.status === 'success' ? 'success' : 'error',
+      title: result.status === 'success' ? 'Sucesso!' : 'Erro!',
+      text: result.message
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = './dashboard.php?r=funcionarios';
+      }
+    });
+  }
+</script>
+<link rel="stylesheet" href="assets/css/custom-styles-civil.css">

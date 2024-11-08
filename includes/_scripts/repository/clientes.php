@@ -3,12 +3,12 @@ session_start();
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'];
+    $nome = $_POST['nome'] . ' ' . $_POST['sobrenome'];
     
     $clienteData = array(
         'nome' => $nome,
         'cpf' => $_POST['cpf'],
-        'nacionalidade' => $_POST['nacionalidade'],
+        'nacionalidade' => $_POST['nascionalidade'],
         'estado_civil' => $_POST['estado_civil'],
         'profissao' => $_POST['profissao'],
         'endereco' => $_POST['endereco'],

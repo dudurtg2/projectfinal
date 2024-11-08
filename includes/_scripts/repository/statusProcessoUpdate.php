@@ -1,81 +1,102 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifica se 'codigo' e 'status' foram passados
-    if (isset($_POST['codigo']) && isset($_POST['status'])) {
-        $codigo = $_POST['codigo'];
-        $status = $_POST['status'] === 'ganho' ? 'Ganho' : 'Não Ganho';  // Definindo status
+    $codigo = $_POST['codigo'];
+    $status = $_POST['status'];
+    $documentoProcessos_id = $_POST['documentoProcessos_id'];
 
-        // Verifica se o código e o status não estão vazios
-        if (empty($codigo) || empty($status)) {
-            echo json_encode(array('status' => 'error', 'message' => 'Código ou Status ausente.'));
-            exit;
-        }
+    // URL de consulta dos dados
+    $url_get = "http://carlo4664.c44.integrator.host:10504/documentos/processos/findById/" . urlencode($documentoProcessos_id);
+    $response_get = file_get_contents($url_get);
 
-        // URL para buscar o processo por código
-        $url = "http://carlo4664.c44.integrator.host:10504/processos/findByCodigo/" . urlencode($codigo);
-        
-        // Faz a requisição GET para buscar o processo
-        $response = file_get_contents($url);
-        
-        if ($response !== FALSE) {
-            // Decodifica a resposta JSON para obter o processo
-            $processo = json_decode($response, true);
-            
-            // Verifica se o processo foi encontrado
-            if (isset($processo['id'])) {
-                // Obtém o ID do processo
-                $id = $processo['id'];
+    if ($response_get === FALSE) {
+        // Se não conseguir buscar os dados, retorna erro
+        echo "<script>
+                window.onload = function() {
+                    Swal.fire('Erro!', 'Erro ao buscar dados do DocumentoProcessos.', 'error').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                        }
+                    });
+                };
+              </script>";
+        exit;
+    }
 
-                // URL para atualizar o processo
-                $updateUrl = "http://carlo4664.c44.integrator.host:10504/processos/update/" . urlencode($id);
+    $documentoProcessos = json_decode($response_get, true);
 
-                // Dados para atualização (atualiza apenas o status)
-                $data = [
-                    'status' => $status
-                ];
+    if (!$documentoProcessos) {
+        // Caso não encontre o documento, retorna erro
+        echo "<script>
+                window.onload = function() {
+                    Swal.fire('Erro!', 'Documento não encontrado.', 'error').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                        }
+                    });
+                };
+              </script>";
+        exit;
+    }
 
-                // Inicia o cURL para fazer o PUT
-                $ch = curl_init();
+    // Dados que serão atualizados
+    $data = [
+        'id' => $documentoProcessos['id'],
+        'tipo' => $documentoProcessos['tipo'],
+        'status' => $status,
+        'descrisao' => $documentoProcessos['descrisao'],
+        'documentosClientes' => $documentoProcessos['documentosClientes'],
+    ];
 
-                // Configuração do cURL
-                curl_setopt($ch, CURLOPT_URL, $updateUrl);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));  // Envia os dados como JSON
-                curl_setopt($ch, CURLOPT_HTTPHEADER, [
-                    "Content-Type: application/json",
-                    "Accept: application/json"
-                ]);
+    // URL de atualização do status
+    $url_put = "http://carlo4664.c44.integrator.host:10504/documentos/processos/update/" . urlencode($documentoProcessos_id);
 
-                // Executa a requisição e captura a resposta
-                $result = curl_exec($ch);
+    $ch = curl_init($url_put);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        'Content-Type: application/json',
+    ]);
 
-                // Verifica se ocorreu algum erro com o cURL
-                if (curl_errno($ch)) {
-                    echo json_encode(array('status' => 'error', 'message' => 'Erro ao fazer a requisição: ' . curl_error($ch)));
-                } else {
-                    // Verifica a resposta da requisição de atualização
-                    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-                    if ($httpCode == 200) {
-                        echo json_encode(array('status' => 'success', 'message' => 'Status do processo atualizado com sucesso!'));
-                    } else {
-                        echo json_encode(array('status' => 'error', 'message' => 'Erro ao atualizar o status do processo. HTTP Code: ' . $httpCode));
-                    }
-                }
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
 
-                // Fecha a sessão cURL
-                curl_close($ch);
-            } else {
-                echo json_encode(array('status' => 'error', 'message' => 'Processo não encontrado.'));
-            }
-        } else {
-            echo json_encode(array('status' => 'error', 'message' => 'Erro ao buscar o processo.'));
-        }
+    // Verifica o código de status da resposta HTTP
+    if ($httpCode == 200) {
+        // Caso a atualização seja bem-sucedida, exibe a mensagem de sucesso
+        echo "<script>
+                window.onload = function() {
+                    Swal.fire('Sucesso!', 'Status do processo atualizado com sucesso!', 'success').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                        }
+                    });
+                };
+              </script>";
     } else {
-        echo json_encode(array('status' => 'error', 'message' => 'Parâmetros ausentes.'));
+        // Caso ocorra algum erro durante a atualização, exibe erro
+        echo "<script>
+                window.onload = function() {
+                    Swal.fire('Erro!', 'Erro ao atualizar status. Tente novamente.', 'error').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                        }
+                    });
+                };
+              </script>";
     }
 } else {
-    echo json_encode(array('status' => 'error', 'message' => 'Método de requisição inválido.'));
+    // Se o método de requisição não for POST, exibe um erro
+    echo "<script>
+            window.onload = function() {
+                Swal.fire('Erro!', 'Método de requisição inválido.', 'error').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                        }
+                    });
+            };
+          </script>";
 }
 ?>
