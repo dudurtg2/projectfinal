@@ -45,7 +45,7 @@ if (isset($_GET['codigo'])) {
                 </div>
             </div>
 
-            
+
 
             <div class="card mb-3">
                 <div class="card-header">
@@ -123,6 +123,36 @@ if (isset($_GET['codigo'])) {
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById('myForm').onsubmit = async function (event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    // Verifica se a resposta é JSON
+                    const result = await response.json();
+
+                    Swal.fire({
+                        icon: result.status === 'success' ? 'success' : 'error',
+                        title: result.status === 'success' ? 'Sucesso!' : 'Erro!',
+                        text: result.message
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'dashboard.php?r=acompanhamento';
+                        }
+                    });
+                } catch (error) {
+                    console.error('Erro ao processar o formulário:', error);
+                }
+            }
+        </script>
+
         <?php
         include "includes/tables/processos.php";
     } else {

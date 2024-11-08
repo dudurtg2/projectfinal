@@ -6,7 +6,6 @@ include "includes/tables/funcionarios.php";
         <div class="col-xl-12">
             <div class="card-2">
                 <div class="card-header p-2 ps-3">
-
                     <div>
                         <form id="myForm" class="row g-3" method="post"
                             action="includes/_scripts/repository/funcionario.php">
