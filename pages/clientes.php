@@ -26,7 +26,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
+                            <img src="https://uploads-ssl.webflow.com/60b4f92d9c647d7850ebaf24/620b5d80323a04f0d001f9ad_user.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">John Michael</h6>
@@ -54,7 +54,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user2">
+                            <img src="https://uploads-ssl.webflow.com/60b4f92d9c647d7850ebaf24/620b5d80323a04f0d001f9ad_user.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user2">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Alexa Liras</h6>
@@ -82,7 +82,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user3">
+                            <img src="https://uploads-ssl.webflow.com/60b4f92d9c647d7850ebaf24/620b5d80323a04f0d001f9ad_user.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user3">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Laurent Perrier</h6>
@@ -110,7 +110,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user4">
+                            <img src="https://uploads-ssl.webflow.com/60b4f92d9c647d7850ebaf24/620b5d80323a04f0d001f9ad_user.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user4">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Michael Levi</h6>
@@ -138,7 +138,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user5">
+                            <img src="https://uploads-ssl.webflow.com/60b4f92d9c647d7850ebaf24/620b5d80323a04f0d001f9ad_user.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user5">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Richard Gran</h6>
@@ -166,7 +166,7 @@
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user6">
+                            <img src="https://uploads-ssl.webflow.com/60b4f92d9c647d7850ebaf24/620b5d80323a04f0d001f9ad_user.png" class="avatar avatar-sm me-3 border-radius-lg" alt="user6">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">Miriam Eric</h6>
