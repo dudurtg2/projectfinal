@@ -23,10 +23,6 @@
         } else {
           echo '<a class="nav-link text-dark" href="dashboard.php?r=processos">';
         } ?>
-
-
-      <!-- OPÇÕES -->
-      <div class="nav-top">
         <i class="material-symbols-rounded icon-navbar">dashboard</i>
           <span class="nav-link-text ms-1">Processos</span>
           </a>
@@ -90,9 +86,7 @@
         </li>
       </div>
         
-      
-      
-      <!-- CONFIGURAÇÕES DA CONTA -->
+
       <div class="nav-bottom">
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Configuração de conta</h6>
@@ -126,7 +120,6 @@
           </a>
         </li>
       </div>
-
     </ul>
   </div>
 </aside>
