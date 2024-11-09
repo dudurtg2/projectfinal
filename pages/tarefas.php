@@ -19,7 +19,7 @@
     </div>
 </div>
 <?php
-include("includes/_scripts/processosEncontrados.php");
+include("includes/_responce/processos.php");
 ?>
 
 <?php include("includes/calendar.php"); ?>

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   async function fetchEvents() {
     try {
-      const response = await fetch('includes/_scripts/repository/all_processos.php');
+      const response = await fetch('includes/_scripts/repository/processos/findAll.php');
       if (!response.ok) throw new Error('Erro ao buscar eventos');
       const events = await response.json();
       if (events.error) throw new Error(events.error);

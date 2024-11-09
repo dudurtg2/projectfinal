@@ -14,7 +14,7 @@ include "includes/tables/funcionarios.php";
                         <div class="row">
                             <div>
                                 <form id="myForm" class="row g-3" method="post"
-                                    action="includes/_scripts/repository/funcionario.php">
+                                    action="includes/_scripts/repository/funcionarios/save.php">
                                     <div class="col-md-6">
                                         <label for="inputNome" class="form-label">Nome</label>
                                         <div class="input-group input-group-outline">

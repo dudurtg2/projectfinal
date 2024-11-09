@@ -32,15 +32,17 @@ if (isset($_GET['codigo'])) {
                     <p><strong>Status:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['status']); ?></p>
                     <p><strong>Descrição:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['descrisao']); ?>
                     </p>
-                    <form class="center" action="includes/_scripts/repository/statusProcessoUpdate.php" method="POST">
-                        <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
-                        <input type="hidden" name="documentoProcessos_id"
-                            value="<?php echo htmlspecialchars($processo['documentoProcessos']['id']); ?>">
-                        <button type="submit" name="status" value="Concluído" class="btn btn-success">processo
-                            Concluído</button>
-                        <button type="submit" name="status" value="Perdido" class="btn btn-danger">Processo
-                            Perdido</button>
-                    </form>
+                    <?php if (htmlspecialchars($processo['documentoProcessos']['status']) == 'Aberto') { ?>
+                        <form class="center" action="includes/_scripts/repository/processos/update.php" method="POST">
+                            <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
+                            <input type="hidden" name="documentoProcessos_id"
+                                value="<?php echo htmlspecialchars($processo['documentoProcessos']['id']); ?>">
+                            <button type="submit" name="status" value="Concluído" class="btn btn-success">processo
+                                Concluído</button>
+                            <button type="submit" name="status" value="Perdido" class="btn btn-danger">Processo
+                                Perdido</button>
+                        </form>
+                    <?php } ?>
                 </div>
 
             </div>
