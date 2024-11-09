@@ -30,16 +30,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($password === $storedPassword) {
             $_SESSION['user'] = $user; 
-            header("Location: ../../../dashboard.php");
+            header("Location: ../../../pages/dashboard.php");
             exit;
         } else {
             $_SESSION['error_message'] = "Senha incorreta!";
-            header("Location: ../../../login.php");
+            header("Location: ../../../pages/login.php");
             exit;
         }
     } else {
         $_SESSION['error_message'] = "Email não encontrado!";
-        header("Location: ../../../login.php");
+        header("Location: ../../../pages/login.php");
         exit;
     }
 }
