@@ -1,11 +1,15 @@
+<?php
+include "includes/tables/processos.php";
+?>
 <div class="container-fluid py-2">
     <div class="row">
-        <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
+        <div class="col-xl-12">
             <div class="card-2">
                 <div class="card-header p-2 ps-3">
                     <h5>Novo Processo</h5>
                     <div>
-                        <form id="myForm" class="row g-3" method="post" action="includes/_scripts/repository/processo.php">
+                        <form id="myForm" class="row g-3" method="post"
+                            action="includes/_scripts/repository/processo.php">
                             <div class="col-md-4">
                                 <label for="inputData" class="form-label">Data</label>
                                 <div class="input-group input-group-outline">
@@ -44,7 +48,7 @@
                                 <label for="funcionarioSelect" class="form-label">Funcionário</label>
                                 <div class="input-group input-group-outline">
                                     <select id="funcionarioSelect" class="form-select" name="funcionario" required>
-                                    <option value="" disabled selected>Selecione o funcionário</option>
+                                        <option value="" disabled selected>Selecione o funcionário</option>
                                         <?php
                                         $url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
                                         $response = file_get_contents($url);
@@ -52,7 +56,9 @@
                                             $data = json_decode($response, true);
                                             if (is_array($data)) {
                                                 foreach ($data as $profession) {
-                                                    echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
+                                                    if ($profession['perfil']['nome'] == "Advogado") {
+                                                        echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
+                                                    }
                                                 }
                                             }
                                         } else {
@@ -70,6 +76,7 @@
                                         <?php
                                         $url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
                                         $response = file_get_contents($url);
+                                        
                                         if ($response !== FALSE) {
                                             $data = json_decode($response, true);
                                             if (is_array($data)) {
@@ -130,9 +137,7 @@
     </div>
 </div>
 
-<?php
-include "includes/table_processos.php";
-?>
+
 
 
 <div id="loadingOverlay" style="display: none;">
@@ -180,7 +185,7 @@ include "includes/table_processos.php";
                 text: result.message
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = './dashboard.php?r=funcionarios';
+                    window.location.href = './dashboard.php?r=processos';
                 }
             });
         } catch (error) {

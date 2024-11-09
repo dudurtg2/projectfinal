@@ -13,14 +13,27 @@ if (isset($_GET['codigo'])) {
         <div class="container py-4">
 
             <div class="card mb-3">
+
                 <div class="card-header">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                        <div
+                            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                             <h6 class="text-white text-capitalize ps-3">Detalhes do Processo</h6>
+                            <form action="includes/_scripts/repository/statusProcessoUpdate.php" method="POST">
+                                <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
+                                <input type="hidden" name="documentoProcessos_id"
+                                    value="<?php echo htmlspecialchars($processo['documentoProcessos']['id']); ?>">
+
+                                <button type="submit" name="status" value="Concluído" class="btn btn-success">processo
+                                    Concluído</button>
+                                <button type="submit" name="status" value="Perdido" class="btn btn-danger">Processo
+                                    Perdido</button>
+                            </form>
                         </div>
                     </div>
-
                 </div>
+
+
                 <div class="card-body">
                     <p><strong>Código:</strong> <?php echo htmlspecialchars($processo['codigo']); ?></p>
                     <p><strong>Data:</strong> <?php echo htmlspecialchars($processo['data']); ?></p>
@@ -31,6 +44,7 @@ if (isset($_GET['codigo'])) {
                     </p>
                 </div>
             </div>
+
 
 
             <div class="card mb-3">
@@ -109,13 +123,43 @@ if (isset($_GET['codigo'])) {
                 </div>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById('myForm').onsubmit = async function (event) {
+                event.preventDefault();
+                const formData = new FormData(this);
+
+                try {
+                    const response = await fetch(this.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    // Verifica se a resposta é JSON
+                    const result = await response.json();
+
+                    Swal.fire({
+                        icon: result.status === 'success' ? 'success' : 'error',
+                        title: result.status === 'success' ? 'Sucesso!' : 'Erro!',
+                        text: result.message
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = 'dashboard.php?r=acompanhamento';
+                        }
+                    });
+                } catch (error) {
+                    console.error('Erro ao processar o formulário:', error);
+                }
+            }
+        </script>
+
         <?php
-        include "includes/table_processos.php";
+        include "includes/tables/processos.php";
     } else {
         echo "<p>Erro ao buscar dados do processo.</p>";
-        include "includes/table_processos.php";
+        include "includes/tables/processos.php";
     }
 } else {
-    include "includes/table_processos.php";
+    include "includes/tables/processos.php";
 }
 ?>

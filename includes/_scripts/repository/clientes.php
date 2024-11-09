@@ -3,19 +3,19 @@ session_start();
 header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = $_POST['nome'];
+    $nome = $_POST['nome'] . ' ' . $_POST['sobrenome'];
     
     $clienteData = array(
         'nome' => $nome,
         'cpf' => $_POST['cpf'],
-        'nacionalidade' => $_POST['nacionalidade'],
-        'estado_civil' => $_POST['estado_civil'],
-        'profissao' => $_POST['profissao'],
+        'nascionalidade' => $_POST['nascionalidade'],
+        'estadoCivil' => $_POST['estadoCivil'],
+        'proficao' => $_POST['proficao'],
         'endereco' => $_POST['endereco'],
-        'data_nascimento' => $_POST['data_nascimento'],
-        'telefone_fixo' => $_POST['telefone_fixo'],
-        'telefone_celular' => $POST['telefone_celular'],
-        'email' => $POST['email']
+        'dataNascimento' => $_POST['dataNascimento'],
+        'telefoneFixo' => $_POST['telefoneFixo'],
+        'telefoneCelular' => $_POST['telefone'],
+        'email' => $_POST['emailaaaa']
     );
 
     $jsonData = json_encode($clienteData);
@@ -31,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
 
-    
     $response = curl_exec($ch);
     $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);

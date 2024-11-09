@@ -57,9 +57,9 @@ if (is_array($processos)) {
   foreach ($processos as $processo) {
     if ($processo['documentoProcessos']['status'] == 'aberto') {
       $aberto++;
-    } elseif ($processo['documentoProcessos']['status'] == 'perdido') {
+    } elseif ($processo['documentoProcessos']['status'] == 'Perdido') {
       $perdido++;
-    } elseif ($processo['documentoProcessos']['status'] == 'vencido') {
+    } elseif ($processo['documentoProcessos']['status'] == 'Concluído') {
       $vencido++;
     }
   }
