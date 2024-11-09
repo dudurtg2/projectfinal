@@ -8,6 +8,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  9*/
 
+
  .tela-login h4 {
   font-family: "Abyssinica SIL", serif;
   font-size: 40px;
@@ -132,9 +133,9 @@ body{
   --bs-info: #1A73E8;
   --bs-warning: #fb8c00;
   --bs-danger: #F44335;
-  --bs-light: #e5e5e5;
+  --bs-light: #18183A;
   --bs-dark: #262626;
-  --bs-white: #fff;
+  --bs-white: #18183A;
   --bs-dark-blue: #1A237E;
   --bs-primary-rgb: 233, 30, 99;
   --bs-secondary-rgb: 115, 115, 115;
@@ -5037,6 +5038,10 @@ fieldset:disabled .btn {
   align-items: center;
   justify-content: space-between;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+}
+
+.nav-opc{
+  display: flex;
 }
 
 .navbar>.container,
@@ -25084,6 +25089,7 @@ hr.horizontal.gray-light {
 }
 
 .navbar-vertical.navbar-expand-xs {
+  background-color: #18183A;
   display: block;
   position: fixed;
   top: 0;
@@ -25899,17 +25905,17 @@ hr.horizontal.gray-light {
   }
 }
 
-.navbar-vertical.bg-white {
+.navbar-vertical {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid #e5e5e5;
 }
 
-.navbar-vertical.bg-white .navbar-nav .nav-link.active {
+.navbar-vertical .navbar-nav .nav-link.active {
   box-shadow: none;
 }
 
 .navbar-vertical.bg-transparent .navbar-nav .nav-link.active:after,
-.navbar-vertical.bg-white .navbar-nav .nav-link.active:after {
+.navbar-vertical .navbar-nav .nav-link.active:after {
   color: rgba(206, 212, 218, 0.7) !important;
 }
 

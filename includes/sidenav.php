@@ -11,7 +11,7 @@
     </a>
   </div>
   <hr class="horizontal dark mt-0 mb-2">
-  <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
+  <div class="collapse navbar-collapse w-auto nav-opc" id="sidenav-collapse-main">
     <ul class="navbar-nav">
       <li class="nav-item">
         <?php if (isset($_GET["r"])) {
@@ -24,101 +24,109 @@
           echo '<a class="nav-link text-dark" href="dashboard.php?r=processos">';
         } ?>
 
+
+      <!-- OPÇÕES -->
+      <div class="nav-top">
         <i class="material-symbols-rounded icon-navbar">dashboard</i>
-        <span class="nav-link-text ms-1">Processos</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <?php if (isset($_GET["r"])) {
-          if ($_GET["r"] == "clientes") {
-            echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=clientes">';
+          <span class="nav-link-text ms-1">Processos</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_GET["r"])) {
+            if ($_GET["r"] == "clientes") {
+              echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=clientes">';
+            } else {
+              echo '<a class="nav-link text-dark" href="dashboard.php?r=clientes">';
+            }
           } else {
             echo '<a class="nav-link text-dark" href="dashboard.php?r=clientes">';
-          }
-        } else {
-          echo '<a class="nav-link text-dark" href="dashboard.php?r=clientes">';
-        } ?>
+          } ?>
 
-        <i class="material-symbols-rounded icon-navbar">table_view</i>
-        <span class="nav-link-text ms-1">Clientes</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <?php if (isset($_GET["r"])) {
-          if ($_GET["r"] == "funcionarios") {
-            echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=funcionarios">';
+          <i class="material-symbols-rounded icon-navbar">table_view</i>
+          <span class="nav-link-text ms-1">Clientes</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_GET["r"])) {
+            if ($_GET["r"] == "funcionarios") {
+              echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=funcionarios">';
+            } else {
+              echo '<a class="nav-link text-dark" href="dashboard.php?r=funcionarios">';
+            }
           } else {
             echo '<a class="nav-link text-dark" href="dashboard.php?r=funcionarios">';
-          }
-        } else {
-          echo '<a class="nav-link text-dark" href="dashboard.php?r=funcionarios">';
-        } ?>
-        <i class="material-symbols-rounded icon-navbar">receipt_long</i>
-        <span class="nav-link-text ms-1">Funcionarios</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <?php if (isset($_GET["r"])) {
-          if ($_GET["r"] == "tarefas") {
-            echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=tarefas">';
+          } ?>
+          <i class="material-symbols-rounded icon-navbar">receipt_long</i>
+          <span class="nav-link-text ms-1">Funcionarios</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_GET["r"])) {
+            if ($_GET["r"] == "tarefas") {
+              echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=tarefas">';
+            } else {
+              echo '<a class="nav-link text-dark" href="dashboard.php?r=tarefas">';
+            }
           } else {
             echo '<a class="nav-link text-dark" href="dashboard.php?r=tarefas">';
-          }
-        } else {
-          echo '<a class="nav-link text-dark" href="dashboard.php?r=tarefas">';
-        } ?>
-        <i class="material-symbols-rounded icon-navbar">view_in_ar</i>
-        <span class="nav-link-text ms-1">Tarefas</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <?php if (isset($_GET["r"])) {
-          if ($_GET["r"] == "acompanhamento") {
-            echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=acompanhamento">';
+          } ?>
+          <i class="material-symbols-rounded icon-navbar">view_in_ar</i>
+          <span class="nav-link-text ms-1">Tarefas</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_GET["r"])) {
+            if ($_GET["r"] == "acompanhamento") {
+              echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=acompanhamento">';
+            } else {
+              echo '<a class="nav-link text-dark" href="dashboard.php?r=acompanhamento">';
+            }
           } else {
             echo '<a class="nav-link text-dark" href="dashboard.php?r=acompanhamento">';
-          }
-        } else {
-          echo '<a class="nav-link text-dark" href="dashboard.php?r=acompanhamento">';
-        } ?>
-        <i class="material-symbols-rounded icon-navbar">format_textdirection_r_to_l</i>
-        <span class="nav-link-text ms-1">Acompanhamento</span>
-        </a>
-      </li>
-
-      <li class="nav-item mt-3">
-        <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Configuração de conta</h6>
-      </li>
-      <li class="nav-item">
-        <?php if (isset($_GET["r"])) {
-          if ($_GET["r"] == "perfil") {
-            echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=perfil">';
+          } ?>
+          <i class="material-symbols-rounded icon-navbar">format_textdirection_r_to_l</i>
+          <span class="nav-link-text ms-1">Acompanhamento</span>
+          </a>
+        </li>
+      </div>
+        
+      
+      
+      <!-- CONFIGURAÇÕES DA CONTA -->
+      <div class="nav-bottom">
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Configuração de conta</h6>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_GET["r"])) {
+            if ($_GET["r"] == "perfil") {
+              echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=perfil">';
+            } else {
+              echo '<a class="nav-link text-dark" href="dashboard.php?r=perfil">';
+            }
           } else {
             echo '<a class="nav-link text-dark" href="dashboard.php?r=perfil">';
-          }
-        } else {
-          echo '<a class="nav-link text-dark" href="dashboard.php?r=perfil">';
-        } ?>
-        <i class="material-symbols-rounded icon-navbar">person</i>
-        <span class="nav-link-text ms-1">Perfil</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <?php if (isset($_GET["r"])) {
-          if ($_GET["r"] == "resgistrar") {
-            echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=resgistrar">';
+          } ?>
+          <i class="material-symbols-rounded icon-navbar">person</i>
+          <span class="nav-link-text ms-1">Perfil</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <?php if (isset($_GET["r"])) {
+            if ($_GET["r"] == "resgistrar") {
+              echo '<a class="nav-link active bg-gradient-dark text-white" href="dashboard.php?r=resgistrar">';
+            } else {
+              echo '<a class="nav-link text-dark" href="dashboard.php?r=resgistrar">';
+            }
           } else {
             echo '<a class="nav-link text-dark" href="dashboard.php?r=resgistrar">';
-          }
-        } else {
-          echo '<a class="nav-link text-dark" href="dashboard.php?r=resgistrar">';
-        } ?>
+          } ?>
+          <i class="material-symbols-rounded icon-navbar">assignment</i>
+          <span class="nav-link-text ms-1">Registrar</span>
+          </a>
+        </li>
+      </div>
 
-        <i class="material-symbols-rounded icon-navbar">assignment</i>
-        <span class="nav-link-text ms-1">Registrar</span>
-        </a>
-      </li>
     </ul>
   </div>
 </aside>
