@@ -10,11 +10,11 @@
           </div>
         </div>
       </div>
-  
+
       <div class="container-fluid py-2">
         <div class="row">
           <div class="col-xl-6 col-sm-6 mb-xl-0 mb-4 card-background">
-            <div class="card">
+            <div class="card w">
               <div class="card-header p-2 ps-3">
                 <div class="d-flex justify-content-between">
                   <div>

@@ -47,18 +47,7 @@ include("includes/_scripts/repository/findprocessos.php");
         </div>
 
 
-        <div class="flex-grow-1 me-3 d-flex align-items-center">
-          <span class="me-2">
-            <i class="fas fa-search"></i>
-          </span>
-          <form action="dashboard.php?r=tarefas" method="POST">
-            <div class="input-group input-group-outline w-100">
-              <label class="form-label">Pesquise por clientes ou código...</label>
-              <input type="text" class="form-control" name="busca" required>
-            </div>
-          </form>
-
-        </div>
+        
 
       </div>
     </div>
@@ -147,7 +136,3 @@ include("includes/_scripts/repository/findprocessos.php");
 
 </div>
 
-
-<?php
-include("includes/_scripts/processosEncontrados.php");
-?>
