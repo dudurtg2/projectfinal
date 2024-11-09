@@ -1,5 +1,5 @@
 <?php
-include "includes/tables/clientes.php";
+include "../includes/tables/clientes.php";
 ?>
 
 <div class="container-fluid py-2">

@@ -1,5 +1,5 @@
 <?php
-include "includes/tables/processos.php";
+include "../includes/tables/processos.php";
 ?>
 <div class="container-fluid py-2">
     <div class="row">

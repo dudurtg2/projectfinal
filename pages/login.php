@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <?php
 session_start(); 
-include("includes/head.php");
+include("../includes/head.php");
 ?>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -29,7 +29,7 @@ include("includes/head.php");
                 }
                 ?>
                 
-                <form role="form" class="text-start" action="includes/_scripts/repository/auth.php" method="POST">
+                <form role="form" class="text-start" action="../includes/_scripts/repository/auth.php" method="POST">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Email</label>
                     <input type="email" class="form-control" name="email">

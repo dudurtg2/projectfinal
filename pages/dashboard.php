@@ -19,25 +19,25 @@ include("../includes/head.php");
     <?php if (isset($_GET["r"])) {
       switch ($_GET["r"]) {
         case "clientes":
-          include("../pages/clientes.php");
+          include("clientes.php");
           break;
         case "funcionarios":
-          include("../pages/funcionarios.php");
+          include("funcionarios.php");
           break;
         case "processos":
-          include("../pages/processos.php");
+          include("processos.php");
           break;
         case "tarefas":
-          include("../pages/tarefas.php");
+          include("tarefas.php");
           break;
         case "resgistrar":
-          include("../pages/resgistrar.php");
+          include("resgistrar.php");
           break;
         case "acompanhamento":
-          include("../pages/acompanhamento.php");
+          include("acompanhamento.php");
           break;
         case "perfil":
-          include("../pages/perfil.php");
+          include("perfil.php");
           break;
         
         default:
