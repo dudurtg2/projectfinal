@@ -18,8 +18,8 @@
         </div>
     </div>
 </div>
+
 <?php
 include("../includes/_responce/processos.php");
+include("../includes/calendar.php");
 ?>
-
-<?php include("../includes/calendar.php"); ?>

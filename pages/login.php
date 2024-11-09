@@ -4,9 +4,7 @@
 session_start(); 
 include("../includes/head.php");
 ?>
-
 <body class="g-sidenav-show bg-gray-100">
-
   <main class="main-content mt-0">
     <div class="page-header align-items-start min-vh-100"
       style="background-image: url('https://wallpapercave.com/wp/wp2624276.png');">

@@ -1,6 +1,4 @@
-<?php
-include "../includes/tables/processos.php";
-?>
+<?php include "../includes/tables/processos.php"; ?>
 <div class="container-fluid py-2">
     <div class="row">
         <div class="col-xl-12">
@@ -14,7 +12,7 @@ include "../includes/tables/processos.php";
                         <div class="row">
                             <div>
                                 <form id="myForm" class="row g-3" method="post"
-                                    action="includes/_scripts/repository/processos/save.php">
+                                    action="../includes/_scripts/repository/processos/save.php">
                                     <div class="col-md-4">
                                         <label for="inputData" class="form-label">Data</label>
                                         <div class="input-group input-group-outline">

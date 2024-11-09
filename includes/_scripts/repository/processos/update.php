@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 window.onload = function() {
                     Swal.fire('Erro!', 'Erro ao buscar dados do DocumentoProcessos.', 'error').then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                            window.location.href = '../../../../pages/dashboard.php?r=acompanhamento&codigo=" . $codigo . "';
                         }
                     });
                 };
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 window.onload = function() {
                     Swal.fire('Erro!', 'Documento não encontrado.', 'error').then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                            window.location.href = '../../../../pages/dashboard.php?r=acompanhamento&codigo=" . $codigo . "';
                         }
                     });
                 };
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 window.onload = function() {
                     Swal.fire('Sucesso!', 'Status do processo atualizado com sucesso!', 'success').then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                            window.location.href = '../../../../pages/dashboard.php?r=acompanhamento&codigo=" . $codigo . "';
                         }
                     });
                 };
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 window.onload = function() {
                     Swal.fire('Erro!', 'Erro ao atualizar status. Tente novamente.', 'error').then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                            window.location.href = '../../../../pages/dashboard.php?r=acompanhamento&codigo=" . $codigo . "';
                         }
                     });
                 };
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             window.onload = function() {
                 Swal.fire('Erro!', 'Método de requisição inválido.', 'error').then((result) => {
                         if (result.isConfirmed) {
-                            window.location.href = '../../../dashboard.php?r=acompanhamento';
+                            window.location.href = '../../../../pages/dashboard.php?r=acompanhamento&codigo=" . $codigo . "';
                         }
                     });
             };

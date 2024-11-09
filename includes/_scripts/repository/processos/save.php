@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $documentoProcessosData = [
         "tipo" => $_POST['tipo'],
-        "status" => "aberto",
+        "status" => "Aberto",
         "descrisao" => $_POST['descricao'],
         "documentosClientes" => ["id" => $documentosClientesId]
     ];

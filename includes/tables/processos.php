@@ -18,7 +18,6 @@ if ($response !== FALSE) {
                         <h6 class="text-white text-capitalize ps-3">Lista de Cadastrados de Processos</h6>
                     </div>
 
-
                     <table id="example" class="display">
                         <thead>
                             <tr>

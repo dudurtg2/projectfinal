@@ -33,7 +33,7 @@ if (isset($_GET['codigo'])) {
                     <p><strong>Descrição:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['descrisao']); ?>
                     </p>
                     <?php if (htmlspecialchars($processo['documentoProcessos']['status']) == 'Aberto') { ?>
-                        <form class="center" action="includes/_scripts/repository/processos/update.php" method="POST">
+                        <form class="center" action="../includes/_scripts/repository/processos/update.php" method="POST">
                             <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
                             <input type="hidden" name="documentoProcessos_id"
                                 value="<?php echo htmlspecialchars($processo['documentoProcessos']['id']); ?>">
@@ -159,12 +159,12 @@ if (isset($_GET['codigo'])) {
         </script>
 
         <?php
-        include "includes/tables/processos.php";
+        include "../includes/tables/processos.php";
     } else {
         echo "<p>Erro ao buscar dados do processo.</p>";
-        include "includes/tables/processos.php";
+        include "../includes/tables/processos.php";
     }
 } else {
-    include "includes/tables/processos.php";
+    include "../includes/tables/processos.php";
 }
 ?>
