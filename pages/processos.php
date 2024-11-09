@@ -207,4 +207,4 @@
 </script>
 
 
-<link rel="stylesheet" href="assets/css/custom-styles-min.css">
+<link rel="stylesheet" href="../assets/css/custom-styles-min.css">

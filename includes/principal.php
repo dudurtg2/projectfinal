@@ -25,7 +25,7 @@ if ($response !== FALSE) {
             <?php foreach ($funcionarios as $funcionario): ?>
               <div class="container-fluid py-2">
                 <div class="row">
-                  <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 card-background">
+                  <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 card-background caixa">
                     <div class="card">
                       <div class="card-header p-2 ps-3">
                         <div class="d-flex justify-content-between">
@@ -80,7 +80,7 @@ if ($response !== FALSE) {
               if ($funcionario['documentoProcessos']['status'] == 'Concluído') { ?>
                 <div class="container-fluid py-2">
                   <div class="row">
-                    <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 card-background">
+                    <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 card-background caixa" id="caixa">
                       <div class="card">
                         <div class="card-header p-2 ps-3">
                           <div class="d-flex justify-content-between">

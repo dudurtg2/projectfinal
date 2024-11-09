@@ -132,4 +132,4 @@ include "../includes/tables/clientes.php";
   }
 </script>
 
-<link rel="stylesheet" href="assets/css/custom-styles-civil.css">
+<link rel="stylesheet" href="../assets/css/custom-styles-civil.css">
