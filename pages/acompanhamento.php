@@ -18,17 +18,7 @@ if (isset($_GET['codigo'])) {
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                         <div
                             class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
-                            <h6 class="text-white text-capitalize ps-3">Detalhes do Processo</h6>
-                            <form action="includes/_scripts/repository/statusProcessoUpdate.php" method="POST">
-                                <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
-                                <input type="hidden" name="documentoProcessos_id"
-                                    value="<?php echo htmlspecialchars($processo['documentoProcessos']['id']); ?>">
-
-                                <button type="submit" name="status" value="Concluído" class="btn btn-success">processo
-                                    Concluído</button>
-                                <button type="submit" name="status" value="Perdido" class="btn btn-danger">Processo
-                                    Perdido</button>
-                            </form>
+                            <h5 class="text-white text-capitalize ps-3"> Detalhes do Processo</h5>
                         </div>
                     </div>
                 </div>
@@ -42,7 +32,17 @@ if (isset($_GET['codigo'])) {
                     <p><strong>Status:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['status']); ?></p>
                     <p><strong>Descrição:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['descrisao']); ?>
                     </p>
+                    <form class="center" action="includes/_scripts/repository/statusProcessoUpdate.php" method="POST">
+                        <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
+                        <input type="hidden" name="documentoProcessos_id"
+                            value="<?php echo htmlspecialchars($processo['documentoProcessos']['id']); ?>">
+                        <button type="submit" name="status" value="Concluído" class="btn btn-success">processo
+                            Concluído</button>
+                        <button type="submit" name="status" value="Perdido" class="btn btn-danger">Processo
+                            Perdido</button>
+                    </form>
                 </div>
+
             </div>
 
 
@@ -50,7 +50,8 @@ if (isset($_GET['codigo'])) {
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                        <div
+                            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                             <h6 class="text-white text-capitalize ps-3">Funcionário Responsável</h6>
                         </div>
                     </div>
@@ -69,7 +70,8 @@ if (isset($_GET['codigo'])) {
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                        <div
+                            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                             <h6 class="text-white text-capitalize ps-3">Cliente</h6>
                         </div>
                     </div>
@@ -96,7 +98,8 @@ if (isset($_GET['codigo'])) {
             <div class="card mb-3">
                 <div class="card-header">
                     <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                        <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
+                        <div
+                            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                             <h6 class="text-white text-capitalize ps-3">Documentos do Cliente</h6>
                         </div>
                     </div>

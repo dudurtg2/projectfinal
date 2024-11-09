@@ -46,7 +46,7 @@ include("includes/head.php");
 
       }
     } else {
-      include("includes/calendar.php");
+      include("includes/principal.php");
     }
     ?>
     <?php include("includes/footer.php"); ?>

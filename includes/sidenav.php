@@ -84,10 +84,9 @@
           <span class="nav-link-text ms-1">Acompanhamento</span>
           </a>
         </li>
-      </div>
+      
         
 
-      <div class="nav-bottom">
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder">Configuração de conta</h6>
         </li>

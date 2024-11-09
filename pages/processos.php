@@ -6,130 +6,138 @@ include "includes/tables/processos.php";
         <div class="col-xl-12">
             <div class="card-2">
                 <div class="card-header p-2 ps-3">
-                    <h5>Novo Processo</h5>
-                    <div>
-                        <form id="myForm" class="row g-3" method="post"
-                            action="includes/_scripts/repository/processo.php">
-                            <div class="col-md-4">
-                                <label for="inputData" class="form-label">Data</label>
-                                <div class="input-group input-group-outline">
-                                    <input type="date" class="form-control" name="data" id="inputData" required>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="inputHora" class="form-label">Hora</label>
-                                <div class="input-group input-group-outline">
-                                    <input type="time" class="form-control" name="hora" id="inputHora" required>
-                                </div>
-                            </div>
+                    <div
+                        class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+                        <h5 class="text-white text-capitalize ps-3"> Novo Processo</h5>
+                    </div>
+                    <div class="container-fluid py-2">
+                        <div class="row">
+                            <div>
+                                <form id="myForm" class="row g-3" method="post"
+                                    action="includes/_scripts/repository/processo.php">
+                                    <div class="col-md-4">
+                                        <label for="inputData" class="form-label">Data</label>
+                                        <div class="input-group input-group-outline">
+                                            <input type="date" class="form-control" name="data" id="inputData" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="inputHora" class="form-label">Hora</label>
+                                        <div class="input-group input-group-outline">
+                                            <input type="time" class="form-control" name="hora" id="inputHora" required>
+                                        </div>
+                                    </div>
 
-                            <div class="col-md-4">
-                                <label for="tipoSelect" class="form-label">Tipo</label>
-                                <div class="input-group input-group-outline">
-                                    <select class="form-select" name="tipo" id="tipoSelect" required>
-                                        <option value="" disabled selected>Selecione o tipo de processo</option>
-                                        <option value="Empresario">Empresário</option>
-                                        <option value="Civil">Civil</option>
-                                        <option value="Penal">Penal</option>
-                                    </select>
-                                </div>
-                            </div>
+                                    <div class="col-md-4">
+                                        <label for="tipoSelect" class="form-label">Tipo</label>
+                                        <div class="input-group input-group-outline">
+                                            <select class="form-select" name="tipo" id="tipoSelect" required>
+                                                <option value="" disabled selected>Selecione o tipo de processo</option>
+                                                <option value="Empresario">Empresário</option>
+                                                <option value="Civil">Civil</option>
+                                                <option value="Penal">Penal</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
-                            <div class="col-md-12">
-                                <label for="inputDescricao" class="form-label">Descrição</label>
-                                <div class="input-group input-group-outline">
-                                    <input type="text" class="form-control" name="descricao" id="inputDescricao"
-                                        required>
-                                </div>
-                            </div>
+                                    <div class="col-md-12">
+                                        <label for="inputDescricao" class="form-label">Descrição</label>
+                                        <div class="input-group input-group-outline">
+                                            <input type="text" class="form-control" name="descricao" id="inputDescricao"
+                                                required>
+                                        </div>
+                                    </div>
 
 
-                            <div class="col-md-6">
-                                <label for="funcionarioSelect" class="form-label">Funcionário</label>
-                                <div class="input-group input-group-outline">
-                                    <select id="funcionarioSelect" class="form-select" name="funcionario" required>
-                                        <option value="" disabled selected>Selecione o funcionário</option>
-                                        <?php
-                                        $url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
-                                        $response = file_get_contents($url);
-                                        if ($response !== FALSE) {
-                                            $data = json_decode($response, true);
-                                            if (is_array($data)) {
-                                                foreach ($data as $profession) {
-                                                    if ($profession['perfil']['nome'] == "Advogado") {
-                                                        echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
+                                    <div class="col-md-6">
+                                        <label for="funcionarioSelect" class="form-label">Funcionário</label>
+                                        <div class="input-group input-group-outline">
+                                            <select id="funcionarioSelect" class="form-select" name="funcionario"
+                                                required>
+                                                <option value="" disabled selected>Selecione o funcionário</option>
+                                                <?php
+                                                $url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
+                                                $response = file_get_contents($url);
+                                                if ($response !== FALSE) {
+                                                    $data = json_decode($response, true);
+                                                    if (is_array($data)) {
+                                                        foreach ($data as $profession) {
+                                                            if ($profession['perfil']['nome'] == "Advogado") {
+                                                                echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
+                                                            }
+                                                        }
                                                     }
+                                                } else {
+                                                    echo '<option disabled>Erro ao carregar profissões</option>';
                                                 }
-                                            }
-                                        } else {
-                                            echo '<option disabled>Erro ao carregar profissões</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="clientesSelect" class="form-label">Clientes</label>
-                                <div class="input-group input-group-outline">
-                                    <select id="clientesSelect" class="form-select" name="clientes" required>
-                                        <option value="" disabled selected>Selecione o clientes</option>
-                                        <?php
-                                        $url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
-                                        $response = file_get_contents($url);
-                                        
-                                        if ($response !== FALSE) {
-                                            $data = json_decode($response, true);
-                                            if (is_array($data)) {
-                                                foreach ($data as $profession) {
-                                                    echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="clientesSelect" class="form-label">Clientes</label>
+                                        <div class="input-group input-group-outline">
+                                            <select id="clientesSelect" class="form-select" name="clientes" required>
+                                                <option value="" disabled selected>Selecione o clientes</option>
+                                                <?php
+                                                $url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
+                                                $response = file_get_contents($url);
+
+                                                if ($response !== FALSE) {
+                                                    $data = json_decode($response, true);
+                                                    if (is_array($data)) {
+                                                        foreach ($data as $profession) {
+                                                            echo '<option value="' . htmlspecialchars($profession['id']) . '">' . htmlspecialchars($profession['nome']) . '</option>';
+                                                        }
+                                                    }
+                                                } else {
+                                                    echo '<option disabled>Erro ao carregar profissões</option>';
                                                 }
-                                            }
-                                        } else {
-                                            echo '<option disabled>Erro ao carregar profissões</option>';
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <h5 class="form-label">Documentos</h5>
-                            <div class="container-fluid py-2">
-                                <div class="row">
-                                    <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
-                                        <div class="card-3">
-                                            <div class="p-2 ps-3">
-                                                <div class="form-group col-md-6">
-                                                    <label for="linkRg" class="form-label">RG:</label>
-                                                    <input type="file" class="form-control-file" id="linkRg"
-                                                        name="linkRg" required>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="linkResidencia" class="form-label">Comprovante de
-                                                        Residência:</label>
-                                                    <input type="file" class="form-control-file" id="linkResidencia"
-                                                        name="linkResidencia" required>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="linkEstadoCivil" class="form-label">Estado
-                                                        Civil:</label>
-                                                    <input type="file" class="form-control-file" id="linkEstadoCivil"
-                                                        name="linkEstadoCivil" required>
-                                                </div>
-                                                <div class="form-group col-md-6" class="form-label">
-                                                    <label for="linkProvas">Provas (múltiplas):</label>
-                                                    <input type="file" class="form-control-file" id="linkProvas"
-                                                        name="linkProvas[]" multiple required>
+                                                ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <h5 class="form-label">Documentos</h5>
+                                    <div class="container-fluid py-2">
+                                        <div class="row">
+                                            <div class="col-xl-12 col-sm-6 mb-xl-0 mb-4">
+                                                <div class="card-3">
+                                                    <div class="p-2 ps-3">
+                                                        <div class="form-group col-md-6">
+                                                            <label for="linkRg" class="form-label">RG:</label>
+                                                            <input type="file" class="form-control-file" id="linkRg"
+                                                                name="linkRg" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="linkResidencia" class="form-label">Comprovante
+                                                                de
+                                                                Residência:</label>
+                                                            <input type="file" class="form-control-file"
+                                                                id="linkResidencia" name="linkResidencia" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label for="linkEstadoCivil" class="form-label">Estado
+                                                                Civil:</label>
+                                                            <input type="file" class="form-control-file"
+                                                                id="linkEstadoCivil" name="linkEstadoCivil" required>
+                                                        </div>
+                                                        <div class="form-group col-md-6" class="form-label">
+                                                            <label for="linkProvas">Provas (múltiplas):</label>
+                                                            <input type="file" class="form-control-file" id="linkProvas"
+                                                                name="linkProvas[]" multiple required>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                    </div>
+                                </form>
                             </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Cadastrar</button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
-
                 </div>
             </div>
         </div>
