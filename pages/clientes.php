@@ -14,7 +14,7 @@ include "../includes/tables/clientes.php";
           <div class="container-fluid py-2">
             <div class="row">
               <div>
-                <form id="myForm" class="row g-3" method="post" action="includes/_scripts/repository/clientes/save.php">
+                <form id="myForm" class="row g-3" method="post" action="../includes/_scripts/repository/clientes/save.php">
                   <div class="col-md-6">
                     <label for="inputNome" class="form-label">Nome</label>
                     <div class="input-group input-group-outline">

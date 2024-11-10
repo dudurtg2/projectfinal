@@ -31,7 +31,7 @@ include("../includes/head.php");
           include("tarefas.php");
           break;
         case "resgistrar":
-          include("resgistrar.php");
+          include("registrar.php");
           break;
         case "acompanhamento":
           include("acompanhamento.php");
