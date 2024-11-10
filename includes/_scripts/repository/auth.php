@@ -3,7 +3,7 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
-    $password = md5($_POST['password']); // MD5 da senha fornecida
+    $password = md5($_POST['password']);
 
     $url = "http://carlo4664.c44.integrator.host:10504/funcionarios/findByEmail/" . urlencode($email);
 

@@ -27,8 +27,8 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
   
   <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-  <script src="../js/calendario.js"></script>
-  <script src="../js/index.global.min.js"></script>
-  <script src="../js/core/locales-all.global.min.js"></script>
+  <script src="../assets/js/calendario.js"></script>
+  <script src="../assets/js/index.global.min.js"></script>
+  <script src="../assets/js/core/locales-all.global.min.js"></script>
   <script>new DataTable('#example');</script>
 </head>

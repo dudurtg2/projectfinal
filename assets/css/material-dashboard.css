@@ -5539,7 +5539,7 @@ fieldset:disabled .btn {
   height: var(--bs-card-height);
   color: var(--bs-body-color);
   word-wrap: break-word;
-  background-color: #E2E2F3;
+  background-color: #e5e5e5;
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
