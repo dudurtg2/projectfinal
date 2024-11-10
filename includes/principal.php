@@ -1,12 +1,7 @@
 <?php
-$url = 'http://carlo4664.c44.integrator.host:10504/processos/findAll';
-$response = file_get_contents($url);
-
-$funcionarios = [];
-if ($response !== FALSE) {
-  $funcionarios = json_decode($response, true);
-}
+include("../includes/_scripts/repository/processos/findAllTable.php");
 ?>
+
 <div class="container-fluid py-2">
   <div class="row">
     <!-- Coluna para "Últimos processos" -->
@@ -21,8 +16,8 @@ if ($response !== FALSE) {
               </div>
             </div>
           </div>
-          <?php if (is_array($funcionarios)): ?>
-            <?php foreach ($funcionarios as $funcionario): ?>
+          <?php if (is_array($processos_view)): ?>
+            <?php foreach ($processos_view as $processo): ?>
               <div class="container-fluid py-2">
                 <div class="row">
                   <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 card-background caixa">
@@ -30,9 +25,9 @@ if ($response !== FALSE) {
                       <div class="card-header p-2 ps-3">
                         <div class="d-flex justify-content-between">
                           <div>
-                            <p class="text-sm mb-0 text-capitalize"> <?php echo htmlspecialchars($funcionario['codigo']); ?>
-                              - <?php echo htmlspecialchars($funcionario['documentoProcessos']['status']) ?></p>
-                            <h4 class="mb-0"><?php echo htmlspecialchars($funcionario['clientes']['nome']); ?></h4>
+                            <p class="text-sm mb-0 text-capitalize"> <?php echo htmlspecialchars($processo['codigo']); ?>
+                              - <?php echo htmlspecialchars($processo['documentoProcessos']['status']) ?></p>
+                            <h4 class="mb-0"><?php echo htmlspecialchars($processo['clientes']['nome']); ?></h4>
                           </div>
                           <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
                             <i class="material-symbols-rounded opacity-10">person</i>
@@ -42,8 +37,8 @@ if ($response !== FALSE) {
                       <hr class="dark horizontal my-0">
                       <div class="card-footer p-2 ps-3">
                         <p class="mb-0 text-sm"><span
-                            class="text-success font-weight-bolder"><?php echo htmlspecialchars($funcionario['data']); ?>
-                          </span><?php echo htmlspecialchars($funcionario['funcionarios']['nome']); ?></p>
+                            class="text-success font-weight-bolder"><?php echo htmlspecialchars($processo['data']); ?>
+                          </span><?php echo htmlspecialchars($processo['funcionarios']['nome']); ?></p>
                       </div>
                     </div>
                   </div>
@@ -75,9 +70,9 @@ if ($response !== FALSE) {
             </div>
           </div>
 
-          <?php if (is_array($funcionarios)): ?>
-            <?php foreach ($funcionarios as $funcionario):
-              if ($funcionario['documentoProcessos']['status'] == 'Concluído') { ?>
+          <?php if (is_array($processos_view)): ?>
+            <?php foreach ($processos_view as $processo):
+              if ($processo['documentoProcessos']['status'] == 'Concluído') { ?>
                 <div class="container-fluid py-2">
                   <div class="row">
                     <div class="col-xl-12 col-sm-12 mb-xl-0 mb-4 card-background caixa" id="caixa">
@@ -86,10 +81,10 @@ if ($response !== FALSE) {
                           <div class="d-flex justify-content-between">
                             <div>
                               <p class="text-sm mb-0 text-capitalize">
-                                <?php echo htmlspecialchars($funcionario['codigo']); ?> -
-                                <?php echo htmlspecialchars($funcionario['documentoProcessos']['status']) ?>
+                                <?php echo htmlspecialchars($processo['codigo']); ?> -
+                                <?php echo htmlspecialchars($processo['documentoProcessos']['status']) ?>
                               </p>
-                              <h4 class="mb-0"><?php echo htmlspecialchars($funcionario['clientes']['nome']); ?></h4>
+                              <h4 class="mb-0"><?php echo htmlspecialchars($processo['clientes']['nome']); ?></h4>
                             </div>
                             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
                               <i class="material-symbols-rounded opacity-10">person</i>
@@ -100,8 +95,8 @@ if ($response !== FALSE) {
                         <div class="card-footer p-2 ps-3">
                           <p class="mb-0 text-sm">
                             <span
-                              class="text-success font-weight-bolder"><?php echo htmlspecialchars($funcionario['data']); ?>
-                            </span><?php echo htmlspecialchars($funcionario['funcionarios']['nome']); ?>
+                              class="text-success font-weight-bolder"><?php echo htmlspecialchars($processo['data']); ?>
+                            </span><?php echo htmlspecialchars($processo['funcionarios']['nome']); ?>
                           </p>
                         </div>
                       </div>

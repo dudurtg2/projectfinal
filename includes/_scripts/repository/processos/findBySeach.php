@@ -49,12 +49,12 @@ $aberto = 0;
 $perdido = 0;
 $vencido = 0;
 
-$processos = [];
+$processos_view = [];
 if ($response !== FALSE) {
-  $processos = json_decode($response, true);
+  $processos_view = json_decode($response, true);
 }
-if (is_array($processos)) {
-  foreach ($processos as $processo) {
+if (is_array($processos_view)) {
+  foreach ($processos_view as $processo) {
     if ($processo['documentoProcessos']['status'] == 'Aberto') {
       $aberto++;
     } elseif ($processo['documentoProcessos']['status'] == 'Perdido') {

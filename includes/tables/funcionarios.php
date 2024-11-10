@@ -1,12 +1,6 @@
+
 <?php
-
-$url = 'http://carlo4664.c44.integrator.host:10504/funcionarios/findAll';
-$response = file_get_contents($url);
-
-$funcionarios = [];
-if ($response !== FALSE) {
-    $funcionarios = json_decode($response, true);
-}
+include("../includes/_scripts/repository/funcionarios/findAll.php");
 ?>
 <div class="container-fluid py-2">
     <div class="row">
@@ -28,12 +22,12 @@ if ($response !== FALSE) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (is_array($funcionarios)): ?>
-                                <?php foreach ($funcionarios as $funcionario): ?>
+                            <?php if (is_array($processos_view)): ?>
+                                <?php foreach ($processos_view as $processo): ?>
                                     <tr>
-                                        <td><?php echo htmlspecialchars($funcionario['nome']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['perfil']['nome']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['telefone']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['nome']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['perfil']['nome']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['telefone']); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>

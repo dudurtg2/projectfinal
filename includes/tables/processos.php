@@ -1,11 +1,5 @@
 <?php
-$url = 'http://carlo4664.c44.integrator.host:10504/processos/findAll';
-$response = file_get_contents($url);
-
-$funcionarios = [];
-if ($response !== FALSE) {
-    $funcionarios = json_decode($response, true);
-}
+include("../includes/_scripts/repository/processos/findAllTable.php");
 ?>
 <div class="container-fluid py-2">
     <div class="row">
@@ -29,19 +23,19 @@ if ($response !== FALSE) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (is_array($funcionarios)): ?>
-                                <?php foreach ($funcionarios as $funcionario): ?>
+                            <?php if (is_array($processos_view)): ?>
+                                <?php foreach ($processos_view as $processo): ?>
                                     <tr>
                                         <td>
                                             <a
-                                                href="dashboard.php?r=acompanhamento&codigo=<?php echo urlencode($funcionario['codigo']); ?>">
-                                                <?php echo htmlspecialchars($funcionario['codigo']); ?>
+                                                href="dashboard.php?r=acompanhamento&codigo=<?php echo urlencode($processo['codigo']); ?>">
+                                                <?php echo htmlspecialchars($processo['codigo']); ?>
                                             </a>
                                         </td>
-                                        <td><?php echo htmlspecialchars($funcionario['funcionarios']['nome']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['clientes']['nome']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['data']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['documentoProcessos']['status']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['funcionarios']['nome']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['clientes']['nome']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['data']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['documentoProcessos']['status']); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>

@@ -1,12 +1,5 @@
 <?php
-$url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
-$response = file_get_contents($url);
-
-$funcionarios = [];
-if ($response !== FALSE) {
-    $funcionarios = json_decode($response, true);
-}
-
+include("../includes/_scripts/repository/clientes/findAll.php");
 ?>
 
 
@@ -31,18 +24,18 @@ if ($response !== FALSE) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (is_array($funcionarios)): ?>
-                                <?php foreach ($funcionarios as $funcionario): ?>
+                            <?php if (is_array($processos_view)): ?>
+                                <?php foreach ($processos_view as $processo): ?>
                                     <tr>
                                         <td>
                                             <a
                                                 href="dashboard.php?r=tarefas" method="POST"> 
-                                                <?php echo htmlspecialchars($funcionario['nome']); ?>
+                                                <?php echo htmlspecialchars($processo['nome']); ?>
                                             </a>
                                         </td>
-                                        <td><?php echo htmlspecialchars($funcionario['telefoneCelular']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['cpf']); ?></td>
-                                        <td><?php echo htmlspecialchars($funcionario['email']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['telefoneCelular']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['cpf']); ?></td>
+                                        <td><?php echo htmlspecialchars($processo['email']); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>
