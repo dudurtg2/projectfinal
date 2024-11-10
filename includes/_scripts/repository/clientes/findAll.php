@@ -2,9 +2,9 @@
 $url = 'http://carlo4664.c44.integrator.host:10504/clientes/findAll';
 $response = file_get_contents($url);
 
-$processos_view = [];
+$clientes = [];
 if ($response !== FALSE) {
-    $processos_view = json_decode($response, true);
+    $clientes = json_decode($response, true);
 }
 
 ?>

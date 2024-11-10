@@ -24,18 +24,18 @@ include("../includes/_scripts/repository/clientes/findAll.php");
                             </tr>
                         </thead>
                         <tbody>
-                            <?php if (is_array($processos_view)): ?>
-                                <?php foreach ($processos_view as $processo): ?>
+                            <?php if (is_array($clientes)): ?>
+                                <?php foreach ($clientes as $cliente): ?>
                                     <tr>
                                         <td>
                                             <a
                                                 href="dashboard.php?r=tarefas" method="POST"> 
-                                                <?php echo htmlspecialchars($processo['nome']); ?>
+                                                <?php echo htmlspecialchars($cliente['nome']); ?>
                                             </a>
                                         </td>
-                                        <td><?php echo htmlspecialchars($processo['telefoneCelular']); ?></td>
-                                        <td><?php echo htmlspecialchars($processo['cpf']); ?></td>
-                                        <td><?php echo htmlspecialchars($processo['email']); ?></td>
+                                        <td><?php echo htmlspecialchars($cliente['telefoneCelular']); ?></td>
+                                        <td><?php echo htmlspecialchars($cliente['cpf']); ?></td>
+                                        <td><?php echo htmlspecialchars($cliente['email']); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             <?php else: ?>

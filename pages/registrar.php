@@ -6,7 +6,7 @@
         <div class="card-header p-2 ps-3">
           <div
             class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
-            <h5 class="text-white text-capitalize ps-3">Adicionar Profissões</h5>
+            <h5 class="text-white text-capitalize ps-3">Adicionar Cargos de sua empresa</h5>
           </div>
           <div class="container-fluid py-2">
             <div class="row">
@@ -20,14 +20,14 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    <button type="submit" class="btn btn-primary">Adicionar novo cargo</button>
                   </div>
                 </form>
+                <?php include "../includes/tables/profissao.php"; ?>
               </div>
             </div>
           </div>
         </div>
-        <?php include "../includes/tables/profissao.php"; ?>
       </div>
     </div>
 
