@@ -8,6 +8,46 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  9*/
 
+ .card-login{
+ 
+  --bs-card-spacer-y: 1rem;
+  --bs-card-spacer-x: 1rem;
+  --bs-card-title-spacer-y: 0.5rem;
+  --bs-card-title-color: ;
+  --bs-card-subtitle-color: ;
+  --bs-card-border-width: 0;
+  --bs-card-border-color: #e5e5e5;
+  --bs-card-border-radius: 0.5rem;
+  --bs-card-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --bs-card-inner-border-radius: 0.5rem;
+  --bs-card-cap-padding-y: 0.5rem;
+  --bs-card-cap-padding-x: 1rem;
+  --bs-card-cap-bg: white;
+  --bs-card-cap-color: ;
+  --bs-card-height: ;
+  --bs-card-color: ;
+  --bs-card-bg: #fff;
+  --bs-card-img-overlay-padding: 1rem;
+  --bs-card-group-margin: 0.75rem;
+  --bs-font-serif: "Abyssinica SIL", serif ;
+  font-family: var(--bs-font-serif);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: var(--bs-card-height);
+  color: var(--bs-body-color);
+  word-wrap: break-word;
+  background-color: white;
+  background-clip: border-box;
+  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border-radius: var(--bs-card-border-radius);
+}
+ 
+
+ h3{
+  font-family: "Abyssinica SIL", serif;
+ }
 
  .tela-login h4 {
   font-family: "Abyssinica SIL", serif;
@@ -5522,15 +5562,14 @@ fieldset:disabled .btn {
   --bs-card-border-radius: 0.5rem;
   --bs-card-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --bs-card-inner-border-radius: 0.5rem;
-  --bs-card-cap-padding-y: 0.5rem;
-  --bs-card-cap-padding-x: 1rem;
   --bs-card-cap-bg: white;
   --bs-card-cap-color: ;
   --bs-card-height: ;
   --bs-card-color: ;
   --bs-card-bg: ;
   --bs-card-img-overlay-padding: 1rem;
-  --bs-card-group-margin: 0.75rem;
+  --bs-card-group-margin: 50px;
+  padding: 1rem;
   background-color: white;
   position: relative;
   display: flex;
@@ -5539,7 +5578,7 @@ fieldset:disabled .btn {
   height: var(--bs-card-height);
   color: var(--bs-body-color);
   word-wrap: break-word;
-  background-color: #e5e5e5;
+  background-color: white;
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
