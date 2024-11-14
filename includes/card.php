@@ -30,6 +30,13 @@ include("_scripts/repository/processos/findBySeach.php");
         <h3 class="mb-0 h4 font-weight-bolder">Advocatos</h3>
         <p class="mb-0">
           Seu sistema de gestão de processos
+          <?php 
+
+          if (isset($_SESSION['user'])) {
+              $user = $_SESSION['user'];
+              echo "Bem-vindo, " . htmlspecialchars($user['nome']); // Ajuste para o nome real do campo
+          } 
+           ?>
         </p>
       </div>
 

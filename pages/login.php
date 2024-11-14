@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-session_start(); 
+
 include("../includes/head.php");
 ?>
 <body class="g-sidenav-show bg-gray-100">
