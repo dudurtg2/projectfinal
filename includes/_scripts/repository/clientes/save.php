@@ -1,10 +1,24 @@
 <?php
 session_start();
 header('Content-Type: application/json');
-
+?>
+<?php include './findAll.php'; ?>
+<?php
+if (is_array($clientes)) {
+    foreach ($clientes as $cliente) {
+        if (
+            $cliente['cpf'] == $_POST['cpf'] or
+            $cliente['telefoneCelular'] == $_POST['telefone'] or
+            $cliente['email'] == $_POST['emailaaaa']
+        ) {
+            echo json_encode(array('status' => 'error', 'message' => 'Dados ja cadastrados. Tente novamente.'));
+            exit;
+        }
+    }
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['nome'] . ' ' . $_POST['sobrenome'];
-    
+
     $clienteData = array(
         'nome' => $nome,
         'cpf' => $_POST['cpf'],
@@ -19,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     $jsonData = json_encode($clienteData);
-    
+
     $url = 'http://carlo4664.c44.integrator.host:10504/clientes/save';
     $ch = curl_init($url);
 
