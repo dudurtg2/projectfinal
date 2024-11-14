@@ -63,7 +63,7 @@ include("_scripts/repository/processos/findBySeach.php");
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
             <div>
-              <p class="text-sm mb-0 text-capitalize">Processos para hoje</p>
+              <p class="text-sm mb-0 ">Processos para hoje</p>
               <h4 class="mb-0"><?php echo $aberto; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape shadow-dark shadow text-center border-radius-lg icon-card">
@@ -84,7 +84,7 @@ include("_scripts/repository/processos/findBySeach.php");
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
             <div>
-              <p class="text-sm mb-0 text-capitalize">Total de processos</p>
+              <p class="text-sm mb-0 ">Total de processos</p>
               <h4 class="mb-0"><?php echo $total; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
@@ -105,7 +105,7 @@ include("_scripts/repository/processos/findBySeach.php");
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Ganhos</p>
-              <h4 class="mb-0"><?php echo $vencido; ?> processos</h4>
+              <h4 class="mb-0"><?php echo $vencido; ?>  Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">weekend</i>
@@ -114,7 +114,7 @@ include("_scripts/repository/processos/findBySeach.php");
         </div>
         <hr class="dark horizontal my-0">
         <div class="card-footer p-2 ps-3">
-          <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">♕ </span>Ultimo ontem</p>
+          <p class="mb-0 text-sm"><span class="text-success font-weight-bolder">♕ </span>Últimos de ontem</p>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@ include("_scripts/repository/processos/findBySeach.php");
         <div class="card-header p-2 ps-3">
           <div class="d-flex justify-content-between">
             <div>
-              <p class="text-sm mb-0 text-capitalize">Não ganho</p>
+              <p class="text-sm mb-0 ">Processos perdidos</p>
               <h4 class="mb-0"><?php echo $perdido; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
@@ -134,7 +134,7 @@ include("_scripts/repository/processos/findBySeach.php");
         </div>
         <hr class="dark horizontal my-0">
         <div class="card-footer p-2 ps-3">
-          <p class="mb-0 text-sm"><span class="text-danger font-weight-bolder">♟ </span>Ultimo em 2023</p>
+          <p class="mb-0 text-sm"><span class="text-danger font-weight-bolder">♟ </span>Últimos de 2023</p>
         </div>
       </div>
     </div>

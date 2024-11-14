@@ -8,7 +8,7 @@
       >
       <img src="https://static.vecteezy.com/system/resources/previews/019/005/521/original/scale-of-justice-icon-png.png" class="navbar-brand-img" width="26" height="26"
         alt="main_logo">
-      <span class="ms-1 text-sm nav-title">Advogados</span>
+      <span class="ms-1 text-sm nav-title">Advocatos</span>
     </a>
   </div>
   <hr class="horizontal dark mt-0 mb-2">

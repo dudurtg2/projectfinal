@@ -7,8 +7,8 @@ include "../includes/tables/funcionarios.php";
             <div class="card-2">
                 <div class="card-header p-2 ps-3">
                     <div
-                        class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
-                        <h6 class="text-white text-capitalize ps-3">Cadastradar de Funcionários</h6>
+                        class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+                        <h6 class="text-white text-capitalize ps-3">Cadastro de Funcionários</h6>
                     </div>
                     <div class="container-fluid py-2">
                         <div class="row">
