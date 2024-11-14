@@ -44,6 +44,9 @@
   border-radius: var(--bs-card-border-radius);
 }
  
+.card-4{
+  background-color: #18183A;
+}
 
  h3{
   font-family: "Abyssinica SIL", serif;
@@ -4015,6 +4018,7 @@ fieldset:disabled .btn {
   --bs-btn-disabled-color: #0a0a0a;
   --bs-btn-disabled-bg: #18183A;
   --bs-btn-disabled-border-color: #18183A;
+  margin-left: 20px;
 }
 
 .btn-secondary {

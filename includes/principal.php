@@ -9,8 +9,8 @@
             <div class="container-fluid py-2">
               <div class="row">
                 <div
-                  class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
-                  <h4 class="text-white text-capitalize ps-3">Últimos processos</h4>
+                  class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+                  <h4 class="text-white text-capitalize ps-3">Últimos Processos</h4>
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@
             <div class="container-fluid py-2">
               <div class="row">
                 <div
-                  class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+                  class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                   <h4 class="text-white ps-3">Processos Finalizados</h4>
                 </div>
               </div>
@@ -121,7 +121,7 @@
             <div class="container-fluid py-2">
               <div class="row">
                 <div
-                  class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+                  class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                   <h4 class="text-white ps-3">Processos Perdidos</h4>
                 </div>
               </div>

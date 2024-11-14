@@ -7,7 +7,7 @@ include("../includes/_scripts/repository/funcionarios/findAll.php");
             <div class="card-2">
                 <div class="card-header p-2 ps-3">
                     <div
-                        class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+                        class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
                         <h6 class="text-white text-capitalize ps-3">Funcionários Cadastrados</h6>
                     </div>
 

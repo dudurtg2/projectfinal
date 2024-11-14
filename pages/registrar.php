@@ -5,7 +5,7 @@
       <div class="card-2">
         <div class="card-header p-2 ps-3">
           <div
-            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+            class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
             <h5 class="text-white text-capitalize ps-3">Adicionar Cargos de sua empresa</h5>
           </div>
           <div class="container-fluid py-2">
@@ -36,7 +36,7 @@
       <div class="card-2">
         <div class="card-header p-2 ps-3">
           <div
-            class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
+            class="card-4 shadow-dark border-radius-lg pt-4 pb-3 d-flex align-items-center justify-content-between">
             <h5 class="text-white text-capitalize ps-3">Adicionar Clientes</h5>
           </div>
           <div class="container-fluid py-2">
