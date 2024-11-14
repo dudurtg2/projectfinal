@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <?php
-
 include("../includes/head.php");
 ?>
+
 <body class="g-sidenav-show bg-gray-100">
   <main class="main-content mt-0">
     <div class="page-header align-items-start min-vh-100"
@@ -27,7 +27,7 @@ include("../includes/head.php");
                 }
                 ?>
                 
-                <form role="form" class="text-start" action="../includes/_scripts/repository/auth.php" method="POST">
+                <form role="form" class="input-group input-group-outline my-3" action="../includes/_scripts/repository/auth.php" method="POST">
                   <div class="input-group input-group-outline my-3">
                     <label class="form-label">Email</label>
                     <input type="email" class="form-control" name="email">
@@ -40,7 +40,7 @@ include("../includes/head.php");
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary w-100 my-4 mb-2">Logar</button>
                   </div>
-                
+                 
                 </form>
               </div>
             </div>

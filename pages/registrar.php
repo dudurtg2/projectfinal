@@ -43,25 +43,8 @@
             <div class="row">
               <div>
                 <form id="formClientes" class="row g-3" method="post"
-                  action="../includes/_scripts/repository/clientes/save.php">
-                  <div class="col-md-12">
-                    <label for="inputNomeCliente" class="form-label">Frase</label>
-                    <div class="input-group input-group-outline">
-                      <input type="text" class="form-control" name="nome" id="inputNomeCliente" required>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="inputNomeCliente" class="form-label">Teste</label>
-                    <div class="input-group input-group-outline">
-                      <input type="text" class="form-control" name="nome" id="inputNomeCliente" required>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="inputNomeCliente" class="form-label">Teste</label>
-                    <div class="input-group input-group-outline">
-                      <input type="text" class="form-control" name="nome" id="inputNomeCliente" required>
-                    </div>
-                  </div>
+                  action="../includes/_scripts/repository/Logoff.php">
+                  
                   <div class="col-12">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                   </div>
@@ -113,6 +96,5 @@
   document.getElementById('formProfissoes').onsubmit = (event) => 
     handleFormSubmit(event, 'formProfissoes', '../includes/_scripts/repository/profissao/save.php', './dashboard.php?r=resgistrar');
 
-  document.getElementById('formClientes').onsubmit = (event) => 
-    handleFormSubmit(event, 'formClientes', '../includes/_scripts/repository/clientes/save.php', './dashboard.php?r=resgistrar');
+
 </script>

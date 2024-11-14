@@ -24,7 +24,9 @@
                     <p><strong>Status:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['status']); ?></p>
                     <p><strong>Descrição:</strong> <?php echo htmlspecialchars($processo['documentoProcessos']['descrisao']); ?>
                     </p>
-                    <?php if (htmlspecialchars($processo['documentoProcessos']['status']) == 'Aberto') { ?>
+                    <?php if (htmlspecialchars($processo['documentoProcessos']['status']) == 'Aberto') { 
+                        $user = $_SESSION['user'];
+                        if($user['perfil']['id'] == 1){?>
                         <form class="center" action="../includes/_scripts/repository/processos/update.php" method="POST">
                             <input type="hidden" name="codigo" value="<?php echo htmlspecialchars($processo['codigo']); ?>">
                             <input type="hidden" name="documentoProcessos_id"
@@ -34,7 +36,8 @@
                             <button type="submit" name="status" value="Perdido" class="btn btn-danger">Processo
                                 Perdido</button>
                         </form>
-                    <?php } ?>
+                    <?php }
+                        } ?>
                 </div>
 
             </div>

@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 
-
+<?php session_start(); ?>
 <?php 
 include("../includes/head.php");
  ?>
