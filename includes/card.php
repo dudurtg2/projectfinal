@@ -25,37 +25,18 @@ include("_scripts/repository/processos/findBySeach.php");
 <div class="container-fluid py-2">
   <div class="row">
     <div class="d-flex align-items-center justify-content-between ms-3">
+      <?php
+      $user = $_SESSION['user'];
+      ?>
 
       <div id="title">
         <h3 class="mb-0 h4 font-weight-bolder">Advocatos</h3>
-        <p class="mb-0">
-          Seu sistema de gestão de processos
-          <?php 
-
-          if (isset($_SESSION['user'])) {
-              $user = $_SESSION['user'];
-              echo "Bem-vindo, " . htmlspecialchars($user['nome']); // Ajuste para o nome real do campo
-          } 
-           ?>
-        </p>
+        <p class="mb-0">Seu sistema de gestão de processos</p>
       </div>
 
-
-      <div class="d-flex align-items-center ms-auto">
-
-        <div class="me-3 d-flex align-items-center">
-          <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
-            <div class="sidenav-toggler-inner">
-              <i class="sidenav-toggler-line"></i>
-              <i class="sidenav-toggler-line"></i>
-              <i class="sidenav-toggler-line"></i>
-            </div>
-          </a>
-        </div>
-
-
-        
-
+      <div id="user-details" class="ms-auto text-end">
+        <h3 class="mb-0 h4 font-weight-bolder"><?php echo htmlspecialchars($user['perfil']['nome']); ?></h3>
+        <p class="mb-0"><?php echo htmlspecialchars($user['nome']); ?></p>
       </div>
     </div>
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4 card-background">
@@ -105,7 +86,7 @@ include("_scripts/repository/processos/findBySeach.php");
           <div class="d-flex justify-content-between">
             <div>
               <p class="text-sm mb-0 text-capitalize">Ganhos</p>
-              <h4 class="mb-0"><?php echo $vencido; ?>  Processos</h4>
+              <h4 class="mb-0"><?php echo $vencido; ?> Processos</h4>
             </div>
             <div class="icon icon-md icon-shape icon-card shadow-dark shadow text-center border-radius-lg">
               <i class="material-symbols-rounded opacity-10">weekend</i>
@@ -142,4 +123,3 @@ include("_scripts/repository/processos/findBySeach.php");
   </div>
 
 </div>
-
